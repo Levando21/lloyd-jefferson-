@@ -1,35 +1,126 @@
-/* Reset styles */
+/*----------------------------Null----------------------------*/
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+body,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
-p:last-child {
-  margin-bottom: 0;
-}
-
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-a {
-  color: currentColor;
-  text-decoration: none;
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
 }
 
-button {
-  cursor: pointer;
+input {
+  font-family: inherit;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+/*----------------------------Other----------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+
+/*---------------------------- Adaptive mobile ----------------------------*/
+.container {
+  max-width: 375px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+}
+/*---------------------------- Adaptive tablet ----------------------------*/
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+  }
+}
+
+/*---------------------------- Adaptive desktop (1280px)----------------------------*/
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 100px;
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+  }
+}
+
+/*---------------------------- Adaptive desktop (1440px)----------------------------*/
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+  }
+}
+
+/*----------------------------General class----------------------------*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
