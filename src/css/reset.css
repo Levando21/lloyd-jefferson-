@@ -22,6 +22,7 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  font-family: inherit;
 }
 
 ul,
@@ -58,7 +59,7 @@ body {
   scroll-behavior: smooth;
   font-family: 'DM Sans', sans-serif;
   color: #fff;
-  background-color: #121212;
+  background-color: #1c1d20;
 }
 
 /*---------------------------- Adaptive mobile ----------------------------*/
