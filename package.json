@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/lloyd-jefferson-/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "json-server --watch reviews-db.json",
+    "start": "concurrently \"npm run serve\" \"nüm run dev\""
   },
   "devDependencies": {
     "glob": "^8.1.0",
@@ -18,7 +20,9 @@
     "accordion": "^3.0.2",
     "axios": "^1.6.8",
     "basiclightbox": "^5.0.4",
+    "concurrently": "^8.2.2",
     "izitoast": "^1.4.0",
+    "jsonserver": "^0.1.6",
     "pixabay": "^0.0.1",
     "simplelightbox": "^2.14.3",
     "swiper": "^11.1.1",
