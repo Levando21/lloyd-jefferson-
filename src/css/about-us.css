@@ -1,0 +1,155 @@
+.about-us {
+}
+
+.about-me-cont {
+}
+
+.container-story {
+  border-radius: 24px;
+  min-width: 340px;
+  max-width: 100%;
+  height: 500px;
+  background-color: #242527;
+  padding: 32px;
+  padding-bottom: 0;
+  margin-bottom: 16px;
+}
+
+.story {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16667;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.accent-red {
+  color: #ed3b44;
+}
+
+.accent-gray {
+  color: rgba(250, 250, 250, 0.4);
+}
+.photo-box {
+  border-radius: 24px;
+  margin: 0 auto;
+  min-width: 340px;
+  max-width: 100%;
+  height: 500px;
+  background: center;
+  background-image: url('../img/hero/hero-ceo.png');
+  background-size: cover;
+  margin-bottom: 12px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.accordion-item {
+  min-width: 340px;
+  max-width: 100%;
+  flex-basis: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.acord-line{
+
+}
+.title-accordion {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+.ac-btn-up,
+.ac-btn-down {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 100px;
+  width: 34px;
+  height: 34px;
+  background-color: transparent;
+
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 12px;
+  right: 0;
+}
+.ac-arrow-up,
+.ac-arrow-down {
+  stroke: #fafafa;
+  fill: #fafafa;
+}
+.ac-btn-up:hover,
+.ac-btn-down:hover {
+  background-color: rgba(250, 250, 250, 0.1);
+  border-color: rgba(250, 250, 250, 0.5);
+}
+.dscp-accordion {
+  font-family: 'Inter Tight', sans-serif;
+  min-width: 340px;
+  max-width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.dscp-accordion-item {
+  padding-bottom: 10px;
+}
+.hidden {
+  display: none;
+}
+
+/*---------------------------- Adaptive tablet ----------------------------*/
+
+@media screen and (min-width: 768px) {
+  .container-story {
+    padding: 64px;
+    height: 700px;
+  }
+  .story {
+    font-size: 38px;
+    line-height: 1.05263;
+  }
+
+  .photo-box {
+    min-width: 700px;
+  }
+  .accordion {
+    margin-bottom: 64px;
+  }
+  .ac-btn-up,
+  .ac-btn-down {
+      top: 8px;
+  }
+}
+/*---------------------------- Adaptive desktop (1280px)----------------------------*/
+
+@media screen and (min-width: 1280px) {
+  .container-story {
+    width: 680px;
+    height: 700px;
+  }
+  .photo-box {
+    min-width: 680px;
+  }
+
+}
