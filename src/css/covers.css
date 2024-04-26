@@ -1,7 +1,7 @@
-/* .covers {
-  transform: rotate(-180deg);
-  background-color: radial-gradient(#1c1d20, #ed3b44);
-} */
+.covers-container {
+  /* background-image: radial-gradient(circle at 10px 40px, #ed3b44); */
+}
+
 .covers-list {
 }
 
