@@ -1,3 +1,10 @@
+/* .covers {
+  transform: rotate(-180deg);
+  background-color: radial-gradient(#1c1d20, #ed3b44);
+} */
+.covers-list {
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -12,39 +19,32 @@
   overflow: hidden;
 }
 
-body {
-  margin: 0;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 .content {
   position: relative;
 }
+
 .marquee {
   position: absolute;
   right: -800px;
   left: 0;
   overflow: hidden;
-  /* font-family: 'Pridi', sans-serif;
-  font-weight: 600;
-  font-size: 34px;
-  text-transform: uppercase; */
 }
 
 .marquee__inner {
-  height: 100vh;
   display: flex;
-  transform: rotate(16deg);
+  transform: rotate(17deg);
 }
 
 .marquee__line {
-  /* background-color: #ffdc00; */
   flex-shrink: 0;
   margin-right: 10px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
