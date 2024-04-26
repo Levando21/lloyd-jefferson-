@@ -29,10 +29,10 @@ body {
   right: -800px;
   left: 0;
   overflow: hidden;
-  font-family: 'Pridi', sans-serif;
+  /* font-family: 'Pridi', sans-serif;
   font-weight: 600;
   font-size: 34px;
-  text-transform: uppercase;
+  text-transform: uppercase; */
 }
 
 .marquee__inner {
@@ -42,7 +42,7 @@ body {
 }
 
 .marquee__line {
-  background-color: #ffdc00;
+  /* background-color: #ffdc00; */
   flex-shrink: 0;
   margin-right: 10px;
   display: flex;
