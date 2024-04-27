@@ -1,10 +1,14 @@
 <footer>
-  <section class="work-together container">
+  <section class="container work-together">
     <div class="footer-title-wrapper">
       <h3 class="footer-title">
         <img
           class="footer-title-img"
-          src="../img/work-together/work-together-header-ceo.png"
+          srcset="
+          ./img/work-together/footer-ceo-mobile.png 292w,
+          ./img/work-together/footer-ceo-tablet.png 528w,
+          ./img/work-together/work-together-header-ceo.png 1056w"
+          src="./img/work-together/work-together-header-ceo.png"
           alt="user photo"
         />
         Let's <span class="footer-title-wrp">work</span> <span>together</span>
@@ -22,15 +26,14 @@
         />
       </label>
       <label class="footer-form-label">
-        <textarea
-          class="footer-form-textarea"
+        <input
+          class="footer-form-input"
           id="footer-form-textarea"
+          type="text"
           name="comment"
           placeholder="comment"
-          rows="4"
-          cols="50"
           required
-        ></textarea>
+        />
       </label>
       <button class="footer-form-btn">Send</button>
     </form>
