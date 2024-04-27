@@ -54,6 +54,7 @@ const handleSubmit = async e => {
   } catch (error) {
     iziToast.error({
       message: error.message,
+      position: 'bottomRight',
     })
   }
 };
