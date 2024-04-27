@@ -1,14 +1,24 @@
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+.covers {
+  max-width: 320px;
+  margin: 0 auto;
+  min-height: 508px;
+}
+
+@media screen and (min-width: 768px) {
+  .covers {
+    max-width: 768px;
+    min-height: 906px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .covers {
+    max-width: 1158px;
+  }
+}
+
+.covers-container {
+  min-height: 508px;
 }
 
 *,
@@ -17,19 +27,20 @@
   box-sizing: border-box;
 }
 
-.content {
+.covers-content {
   position: relative;
 }
 
 .covers-marquee {
   position: absolute;
   right: -800px;
-  left: 0;
+  left: 0px;
   overflow: hidden;
 }
 
 .covers-inner {
   display: flex;
+  justify-content: center;
   transform: rotate(16deg);
 }
 
@@ -40,8 +51,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% / 8);
+  width: calc(100% / 6);
   white-space: nowrap;
+}
+
+.animation {
   animation-name: coversLine;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
@@ -50,10 +64,10 @@
 
 @keyframes coversLine {
   from {
-    transform: translateX(-20%);
+    transform: translateX(-50%);
   }
 
   to {
-    transform: translateX(-180%);
+    transform: translateX(-300%);
   }
 }
