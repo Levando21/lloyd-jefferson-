@@ -54,14 +54,13 @@ body {
 .container {
   max-width: 375px;
   min-width: 320px;
-  padding: 16px 0 16px 0;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
 section {
-  padding: 16px 0 16px 0;
-  justify-content: center;
-  display: block;
+  padding-bottom: 16px;
+  padding-top: 16px;
 }
 
 @media screen and (min-device-pixel-ratio: 2),
@@ -72,13 +71,12 @@ section {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
-    padding: 25px 0 25px 0;
+    padding: 0 32px;
   }
 
   .section {
-    padding: 25px 0 25px 0;
-    justify-content: center;
-    display: block;
+    padding-bottom: 25px;
+    padding-top: 25px;
   }
 }
 
@@ -86,13 +84,12 @@ section {
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
-    padding: 41px 0 41px 0;
+    padding: 0 100px;
   }
 
   .section {
-    padding: 41px 0 41px 0;
-    justify-content: center;
-    display: block;
+    padding-bottom: 41px;
+    padding-top: 41px;
   }
 }
 
