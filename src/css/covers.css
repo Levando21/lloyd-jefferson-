@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 
-.content {
+.covers-content {
   position: relative;
 }
 
@@ -40,7 +40,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% / 8);
   white-space: nowrap;
   animation-name: coversLine;
   animation-duration: 5s;
