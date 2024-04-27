@@ -1,0 +1,72 @@
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  color: #FAFAFA66;
+}
+
+.reviews-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.4);
+  margin-bottom: 32px;
+}
+
+.reviews-slider {
+  width: 100%;
+  height: 18.75rem; /* Previously 30px */
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+  border: 0.0625rem solid #ccc;
+  margin-right: 1.25rem;
+}
+
+.swiper-slide:last-child {
+  margin-right: 0;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 1.25rem; /* Previously 20px */
+}
+
+.swiper-button-next {
+  right: 1.25rem; /* Previously 20px */
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: '';
+  display: block;
+  width: 1.875rem; /* Previously 30px */
+  height: 1.875rem; /* Previously 30px */
+  border: 0.125rem solid #ccc; /* Previously 2px */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.swiper-button-prev::after {
+  transform: rotate(-45deg);
+}
+
+.swiper-button-next::after {
+  transform: rotate(45deg);
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
