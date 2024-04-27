@@ -1,13 +1,10 @@
 /* mobile todo */
-.work-together {
-  position: relative;
-  padding: 23px 0;
+section.work-together {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 /* footer */
-.footer-title-wrapper {
-  padding-bottom: 63px;
-}
 
 .footer-title {
   display: flex;
@@ -25,7 +22,6 @@
 .footer-title-img {
   width: 44px;
   height: 44px;
-  padding: 10px;
   border-radius: 12px;
 }
 
@@ -37,18 +33,17 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 64px;
+  padding-top: 63px;
+  padding-bottom: 64px;
 }
 
 .footer-form-label {
-  width: 343px;
-  height: 44px;
+
 }
 
-.footer-form-input,
-.footer-form-textarea {
-  width: 100%;
-  height: 100%;
+.footer-form-input {
+  width: 330px;
+  height: 44px;
   border: none;
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
 
@@ -90,6 +85,7 @@
 }
 
 /* modal window */
+
 .backdrop {
   display: flex;
   justify-content: center;
@@ -163,8 +159,9 @@
 
 /* tablet  todo*/
 @media screen and (min-width: 768px) {
-  .work-together {
-    padding: 80px 0;
+  section.work-together {
+    padding-top: 80px;
+    padding-bottom: 169px;
   }
 
   .footer-title-wrapper {
