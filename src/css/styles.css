@@ -58,13 +58,6 @@ body {
   margin: 0 auto;
 }
 
-section {
-  padding-bottom: 16px;
-  padding-top: 16px;
-  align-items: center;
-  margin: 0 auto;
-}
-
 @media screen and (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
@@ -75,13 +68,6 @@ section {
     max-width: 768px;
     padding: 0 32px;
   }
-
-  section {
-    padding-bottom: 25px;
-    padding-top: 25px;
-    align-items: center;
-    margin: 0 auto;
-  }
 }
 
 /*---------------------------- Adaptive desktop (1440px)----------------------------*/
@@ -89,13 +75,6 @@ section {
   .container {
     max-width: 1440px;
     padding: 0 100px;
-  }
-
-  section {
-    padding-bottom: 41px;
-    padding-top: 41px;
-    align-items: center;
-    margin: 0 auto;
   }
 }
 
