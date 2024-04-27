@@ -28,7 +28,7 @@
 
 @media screen and (min-width: 1440px) {
   .covers {
-    max-width: 1158px;
+    max-width: 1440px;
     background-image: url(./img/covers/background-dekstop-1x.png);
   }
 }
@@ -50,20 +50,19 @@
 .covers-marquee {
   position: absolute;
   right: -800px;
-  left: 0px;
+  left: 0;
   overflow: hidden;
 }
 
 .covers-inner {
   display: flex;
-  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
   transform: rotate(16deg);
 }
 
 .covers-line {
   flex-shrink: 0;
-  margin-right: 10px;
-  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
