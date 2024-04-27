@@ -6,39 +6,6 @@
   background-image: url(./img/covers/background-mobile-1x.png);
 }
 
-@media (min-resolution: 192dpi) {
-  .covers {
-    background-image: url(./img/covers/background-mobile-2x.png);
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .covers {
-    max-width: 768px;
-    min-height: 906px;
-    background-image: url(./img/covers/background-tablet-1x.png);
-  }
-}
-
-@media only screen and (min-width: 768px) and (min-resolution: 192dpi) {
-  .covers {
-    background-image: url(./img/covers/background-tablet-2x.png);
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .covers {
-    max-width: 1440px;
-    background-image: url(./img/covers/background-dekstop-1x.png);
-  }
-}
-
-@media only screen and (min-width: 1440px) and (min-resolution: 192dpi) {
-  .covers {
-    background-image: url(./img/covers/background-dekstop-2x.png);
-  }
-}
-
 .covers-container {
   min-height: 508px;
 }
@@ -56,8 +23,8 @@
 
 .covers-inner {
   display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 25px;
+  margin-bottom: 25px;
   transform: rotate(16deg);
 }
 
@@ -84,5 +51,46 @@
 
   to {
     transform: translateX(-300%);
+  }
+}
+
+@media (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(./img/covers/background-mobile-2x.png);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .covers {
+    max-width: 768px;
+    min-height: 906px;
+    background-image: url(./img/covers/background-tablet-1x.png);
+  }
+  .covers-inner {
+    gap: 31px;
+    margin-bottom: 31px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(./img/covers/background-tablet-2x.png);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .covers {
+    max-width: 1440px;
+    background-image: url(./img/covers/background-dekstop-1x.png);
+  }
+  .covers-inner {
+    gap: 55px;
+    margin-bottom: 55px;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(./img/covers/background-dekstop-2x.png);
   }
 }
