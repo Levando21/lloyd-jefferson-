@@ -4,7 +4,7 @@
 .about-me-cont {
 }
 
-.container-story {
+.container-story-descr {
   border-radius: 24px;
   min-width: 340px;
   max-width: 100%;
@@ -50,22 +50,15 @@
 }
 
 .accordion-item {
-  min-width: 340px;
-  max-width: 100%;
-  flex-basis: 100%;
-  box-sizing: border-box;
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
   position: relative;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.acord-line{
 
-}
 .title-accordion {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 600;
   font-size: 16px;
+  font-weight: 600;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: rgba(250, 250, 250, 0.4);
@@ -74,8 +67,8 @@
   align-items: center;
   padding-bottom: 24px;
 }
-.ac-btn-up,
-.ac-btn-down {
+.accord-btn-up,
+.accord-btn-down {
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 100px;
   width: 34px;
@@ -92,30 +85,63 @@
   top: 12px;
   right: 0;
 }
-.ac-arrow-up,
-.ac-arrow-down {
+.accord-arrow-up,
+.accord-arrow-down {
   stroke: #fafafa;
   fill: #fafafa;
 }
-.ac-btn-up:hover,
-.ac-btn-down:hover {
+.accord-btn-up:hover,
+.accord-btn-down:hover {
   background-color: rgba(250, 250, 250, 0.1);
   border-color: rgba(250, 250, 250, 0.5);
 }
-.dscp-accordion {
-  font-family: 'Inter Tight', sans-serif;
-  min-width: 340px;
-  max-width: 100%;
+.accord-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.dscr-accordion {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: -0.02em;
 }
 
-.dscp-accordion-item {
+.dscr-accordion-item {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
   padding-bottom: 10px;
 }
-.hidden {
-  display: none;
+/*---------------------------------- Swiper --------------------------------*/
+.skills-swiper {
+  display: flex;
+  
+}
+.skills-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 100px;
+
+ width: 200px;
+  height: 200px;
+  
+}
+.skills-list {
+  display: flex;
+ width: 100%;
+}
+
+.skills-item {
+}
+
+.skills-btn {
+  wi
+}
+
+.skills-btn-icon {
 }
 
 /*---------------------------- Adaptive tablet ----------------------------*/
@@ -136,20 +162,37 @@
   .accordion {
     margin-bottom: 64px;
   }
-  .ac-btn-up,
-  .ac-btn-down {
-      top: 8px;
+  .accord-dropdown {
+    gap: 16px;
+  }
+  .accord-btn-up,
+  .accord-btn-down {
+    top: 8px;
   }
 }
 /*---------------------------- Adaptive desktop (1280px)----------------------------*/
 
 @media screen and (min-width: 1280px) {
-  .container-story {
-    width: 680px;
+  .container-story-descr {
+    min-width: 540px;
     height: 700px;
   }
   .photo-box {
-    min-width: 680px;
+    min-width: 540px;
+    height: 700px;
+  }
+  .wrap-story {
+    display: flex;
+    gap: 16px;
+    width: 1080px;
+  }
+  .accord-dropdown {
+    margin-left: 400px;
+    margin-right: 60px;
+    gap: 32px;
   }
 
+  .dscr-accordion {
+    max-width: 612px;
+  }
 }
