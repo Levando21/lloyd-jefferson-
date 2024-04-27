@@ -1,25 +1,10 @@
 
 .faq {
-  /* padding-top: 20px;
-  padding-bottom: 20px;     */
   width: 100%;
   padding-right: 0;
   padding-left: 0;
 }
 
-/* @media only screen and (min-width: 768px) {
-  .faq{
-      padding-top: 25px;
-      padding-bottom: 25px;  
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .faq{
-      padding-top: 41px;
-      padding-bottom: 41px;    
-}
-} */
 
 .faq-header-main {
 font-weight: 600;
@@ -85,7 +70,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 margin-bottom: 32px;
-margin-right: 20px;
+padding-right: 40px;
 }
 
 .faq-btn-up,
@@ -122,7 +107,7 @@ margin-right: 20px;
 @media only screen and (min-width: 1440px) {
   .faq-btn-up,
   .faq-btn-down  {
-      right: 20px;  
+      right: 15px;  
 }
 }
 
