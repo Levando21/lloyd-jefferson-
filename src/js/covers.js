@@ -1,12 +1,20 @@
-window.addEventListener('scroll', function () {
-  const coversSection = document.querySelector('.covers');
-  const coversMarquee = document.querySelector('.covers-marquee');
+const coversSection = document.querySelector('.covers');
+const coversLine = document.querySelectorAll('.covers-line');
 
-  if (isInViewport(coversSection)) {
-    coversMarquee.classList.add('animate');
-  } else {
-    coversMarquee.classList.remove('animate');
-  }
-});
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5,
+};
 
-function isInViewport(element) {}
+const observer = new IntersectionObserver(function (entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      coversLine.classList.add('animation');
+    } else {
+      coversLine.classList.remove('animation');
+    }
+  });
+}, options);
+
+observer.observe(coversSection);
