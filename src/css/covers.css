@@ -24,13 +24,16 @@
 .covers-marquee {
   position: absolute;
   right: -800px;
-  left: 0;
+  left: 0px;
   overflow: hidden;
 }
 
 .covers-inner {
   display: flex;
+  justify-content: center;
   transform: rotate(16deg);
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 .covers-line {
@@ -41,6 +44,9 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+}
+
+.animation {
   animation-name: coversLine;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
