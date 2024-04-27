@@ -41,7 +41,6 @@ accordionItems.forEach((item, index) => {
     btnDown.classList.toggle('hidden', !isVisible);
   });
 
-
   if (index !== 0) {
     btnUp.classList.remove('hidden');
     btnDown.classList.add('hidden');
