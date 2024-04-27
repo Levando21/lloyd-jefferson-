@@ -58,7 +58,7 @@ const projectsImg = `
     </div>
     <img
       class="projects-image" 
-      srcset="${img_1_320}292w, ${img_1_375} 584w, ${img_1_768}528w, ${img_1_1440}1056w"
+      srcset="${img_1_320} 292w, ${img_1_375} 584w, ${img_1_768} 528w, ${img_1_1440} 1056w"
       sizes="(min-width: 1280px) 580px, (min-width: 768px) 580px, 320px"
       src="${img_1_768}"
       alt="Read Jorney App"
