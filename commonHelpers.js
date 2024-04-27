@@ -20,7 +20,7 @@ import{S as y,a as v}from"./assets/vendor-bae22d42.js";(function(){const r=docum
     </div>
     <img
       class="projects-image" 
-      srcset="${h}292w, ${_} 584w, ${m}528w, ${w}1056w"
+      srcset="${h} 292w, ${_} 584w, ${m} 528w, ${w} 1056w"
       sizes="(min-width: 1280px) 580px, (min-width: 768px) 580px, 320px"
       src="${m}"
       alt="Read Jorney App"
