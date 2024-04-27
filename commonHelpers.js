@@ -73,7 +73,7 @@ import{S as u,a as b}from"./assets/vendor-bae22d42.js";(function(){const i=docum
         </a>
     </div>
     <img class="projects-image" 
-      srcset="${L}292w,${x}584w,${g}528w,${A}1056w"
+      srcset="${L} 292w, ${x} 584w, ${g} 528w, ${A} 1056w"
       sizes="(min-width: 1280px) 580px, (min-width: 768px) 580px, 320px"
       src="${g}"
       alt="Vocab Builder App"
