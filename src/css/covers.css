@@ -2,29 +2,45 @@
   max-width: 320px;
   margin: 0 auto;
   min-height: 508px;
+  overflow: hidden;
+  background-image: url(./img/covers/background-mobile-1x.png);
+}
+
+@media (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(./img/covers/background-mobile-2x.png);
+  }
 }
 
 @media screen and (min-width: 768px) {
   .covers {
     max-width: 768px;
     min-height: 906px;
+    background-image: url(./img/covers/background-tablet-1x.png);
   }
 }
 
-@media screen and (min-width: 1158px) {
+@media only screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(./img/covers/background-tablet-2x.png);
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .covers {
     max-width: 1158px;
+    background-image: url(./img/covers/background-dekstop-1x.png);
+  }
+}
+
+@media only screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(./img/covers/background-dekstop-2x.png);
   }
 }
 
 .covers-container {
   min-height: 508px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 
 .covers-content {
