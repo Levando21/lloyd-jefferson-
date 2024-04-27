@@ -1,4 +1,6 @@
-import { postRequests } from './api.js';
+import {postRequests} from './api.js';
+import iziToast from "izitoast";
+import 'izitoast/dist/css/iziToast.min.css'
 
 const REGEX = /^\w+(.\w+)?@[a-zA-Z_]+?.[a-zA-Z]{2,3}$/;
 
@@ -30,13 +32,18 @@ const handleSubmit = async e => {
   };
   // checking email
   if (REGEX.test(data.email) === false) {
-    console.log('email error');
+    iziToast.error({
+      message: 'email is not allowed to be empty',
+      position: 'bottomRight',
+    });
     return;
   }
   // checking comment
   if (data.comment.trim().length < 1) {
-    console.log(data.comment.trim());
-    console.log('comment error');
+    iziToast.error({
+      message: 'comment is not allowed to be empty',
+      position: 'bottomRight',
+    });
     return;
   }
   // send data
@@ -45,7 +52,9 @@ const handleSubmit = async e => {
     formEl.reset();
     handleOpenModal(result);
   } catch (error) {
-    alert('error');
+    iziToast.error({
+      message: error.message,
+    })
   }
 };
 
