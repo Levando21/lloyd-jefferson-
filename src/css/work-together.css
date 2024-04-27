@@ -1,8 +1,10 @@
+/* mobile todo */
 .work-together {
-  position: absolute;
+  position: relative;
   padding: 23px 0;
 }
 
+/* footer */
 .footer-title-wrapper {
   padding-bottom: 63px;
 }
@@ -62,6 +64,10 @@
   border-radius: 50%;
   border: none;
 
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+
   color: #fafafa;
   background-color: #ed3b44;
 }
@@ -84,24 +90,37 @@
 }
 
 /* modal window */
-.modal {
-  position: relative;
-  margin: 138px auto;
-  padding: 64px 32px;
-  width: 343px;
-  height: 100%;
+.backdrop {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--backround-black);
-  border: 1px solid rgba(250, 250, 250, 0.1);
-  border-radius: 20px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 15, 16, 0.6);
+  z-index: 999;
+
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
 }
 
-/* .hidden {
-  display: none;
-} */
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.modal {
+  position: relative;
+  padding: 64px 32px;
+  border: 1px solid rgba(250, 250, 250, 0.1);
+  border-radius: 20px;
+  background-color: var(--backround-black);
+}
 
 .modal-content {
   width: 279px;
@@ -142,16 +161,38 @@
   color: rgba(250, 250, 250, 0.6);
 }
 
-.overlay {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 375px;
-  height: 100%;
-  background: rgba(15, 15, 16, 0.6);
-}
-
+/* tablet  todo*/
 @media screen and (min-width: 768px) {
+  .work-together {
+    padding: 80px 0;
+  }
+
+  .footer-title-wrapper {
+    width: 542px;
+    padding-bottom: 18px;
+  }
+
+  .footer-title {
+    gap: 20px;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+  }
+
+  .footer-title-img {
+    border-radius: 24px;
+    width: 70px;
+    height: 70px;
+    padding: 0;
+  }
+
+  .footer-form {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 18px;
+  }
+
   .modal {
     margin: 195px auto;
     padding: 64px 64px;
@@ -167,14 +208,8 @@
     width: 24px;
     height: 24px;
   }
-
-  .overlay {
-    width: 768px;
-  }
 }
 
+/* desktop */
 @media screen and (min-width: 1440px) {
-  .overlay {
-    width: 1440px;
-  }
 }
