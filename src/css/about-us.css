@@ -1,0 +1,221 @@
+.about-us {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+
+
+.aboutus-container-story-descr {
+  border-radius: 24px;
+  min-width: 340px;
+  max-width: 100%;
+  height: 500px;
+  background-color: #242527;
+  padding: 32px;
+  padding-bottom: 0;
+  margin-bottom: 16px;
+}
+
+.aboutus-story {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16667;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.aboutus-accent-red {
+  color: #ed3b44;
+}
+
+.aboutus-accent-gray {
+  color: rgba(250, 250, 250, 0.4);
+}
+.aboutus-photo-box {
+  border-radius: 24px;
+  margin: 0 auto;
+  min-width: 340px;
+  max-width: 100%;
+  height: 500px;
+  background: center;
+  background-image: url('../img/hero/hero-ceo.png');
+  background-size: cover;
+  margin-bottom: 12px;
+}
+
+.aboutus-accordion {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.aboutus-accordion-item {
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.aboutus-title-accordion {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+.aboutus-accord-btn-up,
+.aboutus-accord-btn-down {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 100px;
+  width: 34px;
+  height: 34px;
+  background-color: transparent;
+
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 12px;
+  right: 0;
+}
+.aboutus-accord-arrow-up,
+.aboutus-accord-arrow-down {
+  stroke: #fafafa;
+  fill: #fafafa;
+}
+.aboutus-accord-btn-up:hover,
+.aboutus-accord-btn-down:hover {
+  background-color: rgba(250, 250, 250, 0.1);
+  border-color: rgba(250, 250, 250, 0.5);
+}
+.aboutus-accord-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.aboutus-dscr-accordion {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.aboutus-dscr-accordion-item {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  padding-bottom: 10px;
+}
+/*---------------------------------- Swiper --------------------------------*/
+.aboutus-skills-swiper {
+  display: flex;
+  margin-left: 32px;
+  
+}
+.aboutus-skills-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 100px;
+  width: 200px;
+  aspect-ratio:3/3;
+
+  
+  
+}
+.aboutus-skills-circle:hover{
+ background-color: #ed3b44;
+}
+.aboutus-skills-list {
+  display: flex;
+max-width: 100%;
+}
+
+.aboutus-skills-item {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+    
+}
+
+.aboutus-skills-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.aboutus-skills-btn-icon {
+  margin-left: 72px;
+  fill: #3B3B3B;
+}
+
+/*---------------------------- Adaptive tablet ----------------------------*/
+
+@media screen and (min-width: 768px) {
+  .about-us{
+    padding-bottom: 48px;
+  }
+  .aboutus-container-story {
+    padding: 64px;
+    height: 700px;
+  }
+  .aboutus-story {
+    font-size: 38px;
+    line-height: 1.05263;
+  }
+
+  .aboutus-photo-box {
+    min-width: 700px;
+  }
+  .aboutus-accordion {
+    margin-bottom: 64px;
+  }
+  .aboutus-accord-dropdown {
+    gap: 16px;
+  }
+  .aboutus-accord-btn-up,
+  .aboutus-accord-btn-down {
+    top: 8px;
+  }
+}
+/*---------------------------- Adaptive desktop (1280px)----------------------------*/
+
+@media screen and (min-width: 1280px) {
+  .about-us{
+    padding-top: 54px;
+    padding-bottom: 76px;
+  }
+  .aboutus-wrap-story {
+    display: flex;
+    
+    max-width: 100%;
+    gap: 16px;
+    }
+  .aboutus-container-story-descr {
+    min-width: 50%;
+    height: 700px;
+  }
+  .aboutus-photo-box {
+    min-width: 50%;
+    height: 700px;
+  }
+  
+  .aboutus-accord-dropdown {
+    margin-left: 50%;
+    margin-right: 60px;
+    gap: 32px;
+  }
+
+  .aboutus-dscr-accordion {
+   max-width: 612px;
+  }
+}
