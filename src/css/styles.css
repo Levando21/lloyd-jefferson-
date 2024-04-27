@@ -60,6 +60,8 @@ body {
 
 section {
   padding: 16px 0 16px 0;
+  justify-content: center;
+  display: block;
 }
 
 @media screen and (min-device-pixel-ratio: 2),
@@ -75,6 +77,8 @@ section {
 
   .section {
     padding: 25px 0 25px 0;
+    justify-content: center;
+    display: block;
   }
 }
 
@@ -87,6 +91,8 @@ section {
 
   .section {
     padding: 41px 0 41px 0;
+    justify-content: center;
+    display: block;
   }
 }
 
