@@ -1,5 +1,6 @@
 const coversSection = document.querySelector('.covers');
 const coversLine = document.querySelectorAll('.covers-line');
+console.log(coversLine);
 
 const options = {
   root: null,
@@ -10,9 +11,13 @@ const options = {
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      coversLine.classList.add('animation');
+      coversLine.forEach(line => {
+        line.classList.add('animation');
+      });
     } else {
-      coversLine.classList.remove('animation');
+      coversLine.forEach(line => {
+        line.classList.remove('animation');
+      });
     }
   });
 }, options);
