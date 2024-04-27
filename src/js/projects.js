@@ -111,7 +111,7 @@ const projectsImg = `
         </a>
     </div>
     <img class="projects-image" 
-      srcset="${img_3_320}292w,${img_3_375}584w,${img_3_768}528w,${img_3_1440}1056w"
+      srcset="${img_3_320} 292w, ${img_3_375} 584w, ${img_3_768} 528w, ${img_3_1440} 1056w"
       sizes="(min-width: 1280px) 580px, (min-width: 768px) 580px, 320px"
       src="${img_3_768}"
       alt="Vocab Builder App"
