@@ -58,6 +58,12 @@ body {
   margin: 0 auto;
 }
 
+.main-container {
+  max-width: 375px;
+  min-width: 320px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
 @media screen and (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
@@ -68,11 +74,21 @@ body {
     max-width: 768px;
     padding: 0 32px;
   }
+
+  .main-container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
 }
 
 /*---------------------------- Adaptive desktop (1440px)----------------------------*/
 @media screen and (min-width: 1440px) {
   .container {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
+
+  .main-container {
     max-width: 1440px;
     padding: 0 100px;
   }
