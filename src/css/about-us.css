@@ -1,10 +1,10 @@
 .about-us {
 }
 
-.about-me-cont {
+.aboutus-cont {
 }
 
-.container-story-descr {
+.aboutus-container-story-descr {
   border-radius: 24px;
   min-width: 340px;
   max-width: 100%;
@@ -15,7 +15,7 @@
   margin-bottom: 16px;
 }
 
-.story {
+.aboutus-story {
   font-family: 'Inter Tight', sans-serif;
   font-weight: 500;
   font-size: 24px;
@@ -24,14 +24,14 @@
   text-transform: uppercase;
 }
 
-.accent-red {
+.aboutus-accent-red {
   color: #ed3b44;
 }
 
-.accent-gray {
+.aboutus-accent-gray {
   color: rgba(250, 250, 250, 0.4);
 }
-.photo-box {
+.aboutus-photo-box {
   border-radius: 24px;
   margin: 0 auto;
   min-width: 340px;
@@ -43,20 +43,20 @@
   margin-bottom: 12px;
 }
 
-.accordion {
+.aboutus-accordion {
   display: flex;
   flex-direction: column;
   margin-bottom: 32px;
 }
 
-.accordion-item {
+.aboutus-accordion-item {
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
   position: relative;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.title-accordion {
+.aboutus-title-accordion {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -67,8 +67,8 @@
   align-items: center;
   padding-bottom: 24px;
 }
-.accord-btn-up,
-.accord-btn-down {
+.aboutus-accord-btn-up,
+.aboutus-accord-btn-down {
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 100px;
   width: 34px;
@@ -85,40 +85,40 @@
   top: 12px;
   right: 0;
 }
-.accord-arrow-up,
-.accord-arrow-down {
+.aboutus-accord-arrow-up,
+.aboutus-accord-arrow-down {
   stroke: #fafafa;
   fill: #fafafa;
 }
-.accord-btn-up:hover,
-.accord-btn-down:hover {
+.aboutus-accord-btn-up:hover,
+.aboutus-accord-btn-down:hover {
   background-color: rgba(250, 250, 250, 0.1);
   border-color: rgba(250, 250, 250, 0.5);
 }
-.accord-dropdown {
+.aboutus-accord-dropdown {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
-.dscr-accordion {
+.aboutus-dscr-accordion {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: -0.02em;
 }
 
-.dscr-accordion-item {
+.aboutus-dscr-accordion-item {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: -0.02em;
   padding-bottom: 10px;
 }
 /*---------------------------------- Swiper --------------------------------*/
-.skills-swiper {
+.aboutus-skills-swiper {
   display: flex;
   margin-left: 32px;
   
 }
-.skills-circle {
+.aboutus-skills-circle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,28 +131,28 @@
   
   
 }
-.skills-circle:hover{
+.aboutus-skills-circle:hover{
  background-color: #ed3b44;
 }
-.skills-list {
+.aboutus-skills-list {
   display: flex;
 max-width: 100%;
 }
 
-.skills-item {
+.aboutus-skills-item {
   font-weight: 500;
   font-size: 20px;
   letter-spacing: -0.02em;
     
 }
 
-.skills-btn {
+.aboutus-skills-btn {
   background-color: transparent;
   cursor: pointer;
   border: none;
 }
 
-.skills-btn-icon {
+.aboutus-skills-btn-icon {
   margin-left: 72px;
   fill: #3B3B3B;
 }
@@ -160,54 +160,54 @@ max-width: 100%;
 /*---------------------------- Adaptive tablet ----------------------------*/
 
 @media screen and (min-width: 768px) {
-  .container-story {
+  .aboutus-container-story {
     padding: 64px;
     height: 700px;
   }
-  .story {
+  .aboutus-story {
     font-size: 38px;
     line-height: 1.05263;
   }
 
-  .photo-box {
+  .aboutus-photo-box {
     min-width: 700px;
   }
-  .accordion {
+  .aboutus-accordion {
     margin-bottom: 64px;
   }
-  .accord-dropdown {
+  .aboutus-accord-dropdown {
     gap: 16px;
   }
-  .accord-btn-up,
-  .accord-btn-down {
+  .aboutus-accord-btn-up,
+  .aboutus-accord-btn-down {
     top: 8px;
   }
 }
 /*---------------------------- Adaptive desktop (1280px)----------------------------*/
 
 @media screen and (min-width: 1280px) {
-  .wrap-story {
+  .aboutus-wrap-story {
     display: flex;
     
     max-width: 100%;
     gap: 16px;
     }
-  .container-story-descr {
+  .aboutus-container-story-descr {
     min-width: 50%;
     height: 700px;
   }
-  .photo-box {
+  .aboutus-photo-box {
     min-width: 50%;
     height: 700px;
   }
   
-  .accord-dropdown {
+  .aboutus-accord-dropdown {
     margin-left: 50%;
     margin-right: 60px;
     gap: 32px;
   }
 
-  .dscr-accordion {
+  .aboutus-dscr-accordion {
    max-width: 612px;
   }
 }
