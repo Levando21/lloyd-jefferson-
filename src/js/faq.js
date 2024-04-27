@@ -1,28 +1,29 @@
 // import Accordion from 'accordion-js';
 // import 'accordion-js/dist/accordion.min.css';
 
-// // Default options
-// new Accordion('.container-first');
 
-// // User options
-// new Accordion('.container-second', {
-//   duration: 400,
-//   showMultiple: true,
+
+// const accordions = Array.from(document.querySelectorAll('.faq-container'));
+// new Accordion(accordions, {
 //   onOpen: function(currentElement) {
-//     console.log(currentElement);
+//     currentElement.classList.add('active');
+//     const panel = currentElement.querySelector('.faq-panel');
+//     panel.classList.remove('hidden');
+//     const btnUp = currentElement.querySelector('.faq-btn-up');
+//     const btnDown = currentElement.querySelector('.faq-btn-down');
+//     btnUp.classList.add('hidden');
+//     btnDown.classList.remove('hidden');
+//   },
+//   onClose: function(currentElement) {
+//     currentElement.classList.remove('active');
+//     const panel = currentElement.querySelector('.faq-panel');
+//     panel.classList.add('hidden');
+//     const btnUp = currentElement.querySelector('.faq-btn-up');
+//     const btnDown = currentElement.querySelector('.faq-btn-down');
+//     btnUp.classList.remove('hidden');
+//     btnDown.classList.add('hidden');
 //   }
 // });
-
-// // Define several accordions with the same options (pass an array with selectors)
-// new Accordion(['.container-first', '.container-second'], {});
-
-// // or pass an array with HTMLElements
-// const accordions = Array.from(document.querySelectorAll('.accordion-container'));
-// new Accordion(accordions, {});
-
-// // Detach events
-// const accordion = new Accordion('.container-first');
-// accordion.detachEvents();
 
 
 
