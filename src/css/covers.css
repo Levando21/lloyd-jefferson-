@@ -1,0 +1,99 @@
+.covers {
+  max-width: 320px;
+  margin: 0 auto;
+  min-height: 508px;
+  overflow: hidden;
+  background-image: url(/img/covers/background-mobile-1x.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.covers-container {
+  min-height: 508px;
+}
+
+.covers-content {
+  position: relative;
+}
+
+.covers-marquee {
+  position: absolute;
+  right: -800px;
+  left: 0;
+  overflow: hidden;
+}
+
+.covers-inner {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+  transform: rotate(16deg);
+}
+
+.covers-line {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 6);
+  white-space: nowrap;
+}
+
+.animation {
+  animation-name: coversLine;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes coversLine {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(-300%);
+  }
+}
+
+@media (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(/img/covers/background-mobile-2x.png);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .covers {
+    max-width: 768px;
+    min-height: 906px;
+    background-image: url(/img/covers/background-tablet-1x.png);
+  }
+  .covers-inner {
+    gap: 31px;
+    margin-bottom: 31px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(/img/covers/background-tablet-2x.png);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .covers {
+    max-width: 1440px;
+    background-image: url(/img/covers/background-dekstop-1x.png);
+  }
+  .covers-inner {
+    gap: 55px;
+    margin-bottom: 55px;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(/img/covers/background-dekstop-2x.png);
+  }
+}

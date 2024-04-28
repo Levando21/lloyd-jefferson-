@@ -1,52 +1,83 @@
-
-<footer style="display: none">
-  <section class="work-together">
+<footer class="work-together">
+  <section class="container">
     <div class="footer-title-wrapper">
-      <img class="footer-title-img"
-           src="../img/work-together/work-together-header-ceo.png"
-           alt="user photo"
-           width="70"
-           height="70"
-      >
-      <h3 class="footer-title">Let's <span class="footer-title-wrp">work</span> together</h3>
+      <h3 class="footer-title">
+        <img
+          class="footer-title-img"
+          srcset="
+          ./img/work-together/footer-ceo-mobile.png 292w,
+          ./img/work-together/footer-ceo-tablet.png 528w,
+          ./img/work-together/work-together-header-ceo.png 1056w"
+          src="./img/work-together/work-together-header-ceo.png"
+          alt="user photo"
+        />
+        Let's <span class="footer-title-wrp">work</span> <span>together</span>
+      </h3>
     </div>
-    <form class="footer-form"
-          id="footer-form"
-    >
-      <label class="footer-form-label">
-        <input class="footer-form-input"
-               id="footer-form-input"
-               type="email"
-               name="email"
-               placeholder="client@email.com"
-               required
-        >
-      </label>
-      <label class="footer-form-label">
-        <textarea class="footer-form-textarea"
-                  id="footer-form-textarea"
-                  name="comment"
-                  placeholder="comment"
-                  required
-        ></textarea>
-      </label>
+
+    <!--    -------------------    -->
+    <form class="footer-form" id="footer-form">
+      <div class="form-label-wrap">
+        <label class="footer-form-label">
+          <input
+            class="footer-form-input"
+            id="footer-form-input"
+            type="email"
+            name="email"
+            placeholder="client@email.com"
+
+          />
+          <span class="email-message"></span>
+        </label>
+
+        <label class="footer-form-label">
+          <input
+            class="footer-form-input"
+            id="footer-form-textarea"
+            type="text"
+            name="comment"
+            placeholder="comment"
+            required
+          />
+          <span class="comment-message"></span>
+        </label>
+      </div>
       <button class="footer-form-btn">Send</button>
     </form>
-    <!--todo-->
+    <!--    ---------------------    -->
+
     <address class="footer-address">
       <ul class="footer-contacts-list">
         <li class="footer-contacts-item">
-          <a class="footer-contacts-link"
-             href="mailto:lloydjefferson@gmail.com"
-          >lloydjefferson@gmail
-           .com</a>
+          <a class="footer-contacts-link" href="mailto:lloydjefferson@gmail.com"
+          >lloydjefferson@gmail.com</a
+          >
         </li>
         <li class="footer-contacts-item">
-          <a class="footer-contacts-link"
-             href="tel:+3801111111111"
-          >+3801111111111</a>
+          <a class="footer-contacts-link" href="tel:+3801111111111"
+          >+380 11 1111 11 11</a
+          >
         </li>
       </ul>
     </address>
   </section>
 </footer>
+<!--modal window-->
+<div class="backdrop" id="modal">
+  <div class="modal">
+    <div class="modal-content">
+      <button class="footer-modal-btn-close" type="button">
+        <svg class="modal-btn-icon" width="14" height="14">
+          <use href="./img/svg/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+      <h2 class="modal-content-title">
+        Thank you for your interest in cooperation!
+      </h2>
+      <p class="modal-content-text">
+        The manager will contact you shortly to discuss further details and
+        opportunities for cooperation. Please stay in touch.
+      </p>
+    </div>
+  </div>
+</div>
