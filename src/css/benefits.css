@@ -1,8 +1,8 @@
-.bnf-icons{
+.bnf-icons {
     fill: #FAFAFA;
 }
 
-.bnf-svg-cont{
+.bnf-svg-cont {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,11 +13,11 @@
     background-color: #ED3B44;
 }
 
-.benefits{
+.benefits {
     padding: 32px 0;
 }
 
-.bnf-title{
+.bnf-title {
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
@@ -27,7 +27,7 @@
     color: rgba(250, 250, 250, 0.4);
 }
 
-.bnf-ul{
+.bnf-ul {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -50,26 +50,97 @@
     border-color: #FAFAFA;
 }
 
-.bnf-li{
-border-radius: 20px;
-padding: 24px;
-background-color: #242527;
+.bnf-li {
+    border-radius: 20px;
+    padding: 24px;
+    background-color: #242527;
+    position: relative;
 }
 
-.bnf-text-cont{
+.bnf-li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 0 8px #ED3B44;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.bnf-li:hover::before {
+    opacity: 1;
+}
+
+
+
+@keyframes orbit {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    10% {
+        transform: translateX(2px) translateY(0);
+    }
+
+    20% {
+        transform: translateX(2px) translateY(2px);
+    }
+
+    30% {
+        transform: translateX(0) translateY(2px);
+    }
+
+    40% {
+        transform: translateX(-2px) translateY(2px);
+    }
+
+    50% {
+        transform: translateX(-2px) translateY(0);
+    }
+
+    60% {
+        transform: translateX(-2px) translateY(-2px);
+    }
+
+    70% {
+        transform: translateX(0) translateY(-2px);
+    }
+
+    80% {
+        transform: translateX(2px) translateY(-2px);
+    }
+
+    90% {
+        transform: translateX(2px) translateY(0);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+.bnf-li:hover .bnf-icons {
+    animation: orbit 4s linear infinite;
+
+}
+
+.bnf-text-cont {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.bnf-name{
+.bnf-name {
     font-weight: 600;
     font-size: 20px;
     line-height: 1.5;
     letter-spacing: -0.02em;
 }
 
-.bnf-discr{
+.bnf-discr {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: -0.02em;
