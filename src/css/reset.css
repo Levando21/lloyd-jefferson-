@@ -7,6 +7,10 @@ button:hover {
   cursor: pointer;
 }
 
+body::-webkit--scrollbar {
+  display: none;
+}
+
 *,
 ::after,
 ::before {
