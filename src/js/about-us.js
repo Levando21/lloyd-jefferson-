@@ -42,36 +42,38 @@ const swiper = new Swiper('.aboutus-skills-swiper', {
   loop: true,
   setWrapperSize: true,
   breakpoints: {
+// Налаштування для десктопу
     1440: {
       slidesPerView: 6,
     },
-// Налаштування для десктопу
-   
 // Налаштування для планшету
     768: {
       slidesPerView: 3,
-     
     },
 // Налаштування для мобільних пристроїв
     320: {
       slidesPerView: 2,
     }
-  }
-  
-  
-});
-const btnNext = document.querySelector('.aboutus-skills-btn');
+  },
+  on: {
+    init: function () {
+     
+      document.querySelector('.swiper-slide').style.backgroundColor = '#ed3b44';
+    },
+    slideChange: function () {
 
+      const previousSlide = this.slides[this.previousIndex];
+      const activeSlide = this.slides[this.activeIndex];
+      previousSlide.style.background = '' ;
+      activeSlide.style.backgroundColor = '#ed3b44';
+    },
+  },
+
+});
+  
+    
+
+const btnNext = document.querySelector('.aboutus-skills-btn');
 btnNext.addEventListener('click', () => {
   swiper.slideNext();
-  
-});
-swiper.on('slideChange', () => {
-  if (swiper.params.slidesPerView >= swiper.slides.length) {
-    btnNext.disabled = true;
-    const btnIcon = document.querySelector('.aboutus-skills-btn-icon');
-    btnIcon.style.fill = '#3b3b3b';
-  } else {
-    btnNext.disabled = false;
-  }
 });
