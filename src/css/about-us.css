@@ -36,13 +36,13 @@
   min-width: 340px;
   max-width: 100%;
   min-height: 500px;
-  background-image: url('./img/about-us/about-us-ceo-mobile.png');
+  background-image: url('../img/about-us/about-us-ceo-mobile.png');
   background-size: cover;
   margin-bottom: 12px;
 }
 @media (min-resolution: 192dpi) {
   .aboutus-photo-box {
-    background-image: url('./img/about-us/about-us-ceo-mobile-retina.png');
+    background-image: url('../img/about-us/about-us-ceo-mobile-retina.png');
   }
 }
 .aboutus-accordion {
@@ -177,11 +177,11 @@ cursor: pointer;
   .aboutus-photo-box {
     min-width: 700px;
     min-height: 700px;
-    background-image: url('./img/about-us/about-us-ceo-tablet.png');
+    background-image: url('../img/about-us/about-us-ceo-tablet.png');
   }
     @media (min-resolution: 192dpi) {
       .aboutus-photo-box {
-        background-image: url('./img/about-us/about-us-ceo-tablet-ritina.png');
+        background-image: url('../img/about-us/about-us-ceo-tablet-ritina.png');
       }
     }
   .aboutus-accordion {
@@ -218,7 +218,7 @@ cursor: pointer;
   .aboutus-photo-box {
     min-width: 50%;
     min-height: 700px;
-    background-image: url('./img/about-us/about-us-ceo-dekstop.png');
+    background-image: url('../img/about-us/about-us-ceo-dekstop.png');
   }
 
   .aboutus-accord-dropdown {
