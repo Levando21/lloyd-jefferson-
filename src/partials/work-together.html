@@ -1,5 +1,5 @@
-<footer>
-  <section class="container work-together">
+<footer class="work-together">
+  <section class="container">
     <div class="footer-title-wrapper">
       <h3 class="footer-title">
         <img
@@ -14,40 +14,48 @@
         Let's <span class="footer-title-wrp">work</span> <span>together</span>
       </h3>
     </div>
+
+    <!--    -------------------    -->
     <form class="footer-form" id="footer-form">
-      <label class="footer-form-label">
-        <input
-          class="footer-form-input"
-          id="footer-form-input"
-          type="email"
-          name="email"
-          placeholder="client@email.com"
-          required
-        />
-      </label>
-      <label class="footer-form-label">
-        <input
-          class="footer-form-input"
-          id="footer-form-textarea"
-          type="text"
-          name="comment"
-          placeholder="comment"
-          required
-        />
-      </label>
+      <div class="form-label-wrap">
+        <label class="footer-form-label">
+          <input
+            class="footer-form-input"
+            id="footer-form-input"
+            type="email"
+            name="email"
+            placeholder="client@email.com"
+
+          />
+          <span class="email-message"></span>
+        </label>
+
+        <label class="footer-form-label">
+          <input
+            class="footer-form-input"
+            id="footer-form-textarea"
+            type="text"
+            name="comment"
+            placeholder="comment"
+            required
+          />
+          <span class="comment-message"></span>
+        </label>
+      </div>
       <button class="footer-form-btn">Send</button>
     </form>
-    <!--todo-->
+    <!--    ---------------------    -->
+
     <address class="footer-address">
       <ul class="footer-contacts-list">
         <li class="footer-contacts-item">
           <a class="footer-contacts-link" href="mailto:lloydjefferson@gmail.com"
-            >lloydjefferson@gmail.com</a
+          >lloydjefferson@gmail.com</a
           >
         </li>
         <li class="footer-contacts-item">
           <a class="footer-contacts-link" href="tel:+3801111111111"
-            >+380 11 1111 11 11</a
+          >+380 11 1111 11 11</a
           >
         </li>
       </ul>
@@ -58,7 +66,7 @@
 <div class="backdrop" id="modal">
   <div class="modal">
     <div class="modal-content">
-      <button class="modal-btn-close" type="button">
+      <button class="footer-modal-btn-close" type="button">
         <svg class="modal-btn-icon" width="14" height="14">
           <use href="./img/svg/icons.svg#icon-close"></use>
         </svg>

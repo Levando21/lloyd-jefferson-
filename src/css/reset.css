@@ -1,9 +1,16 @@
 /*----------------------------Null----------------------------*/
 a,
 a:visited,
-a:hover {
+a:hover,
+button:hover {
   text-decoration: none;
+  cursor: pointer;
 }
+
+body::-webkit--scrollbar {
+  display: none;
+}
+
 *,
 ::after,
 ::before {
