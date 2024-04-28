@@ -1,10 +1,10 @@
-/* mobile todo */
+/* mobile */
 /* footer */
 .work-together {
   padding-top: 32px;
   padding-bottom: 32px;
 
-  background: url("./img/work-together/footer-background-color.jpg") calc(290px - 100%) top no-repeat, #1c1d20;
+  background: url("../img/work-together/footer-background-color.jpg") calc(290px - 100%) top no-repeat, var(--backround-black);
   background-size: cover;
 }
 
@@ -28,15 +28,25 @@
 }
 
 .footer-title-wrp {
-  color: #ed3b44;
+  color: var(--main-red);
 }
 
 .footer-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   padding-top: 63px;
   padding-bottom: 64px;
+}
+
+.form-label-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-form-label {
+  position: relative;
 }
 
 .footer-form-input {
@@ -47,7 +57,7 @@
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
 
   font-weight: 500;
-  font-size: 16px;
+  font-size: inherit;
   line-height: 150%;
   letter-spacing: -0.02em;
 
@@ -57,10 +67,16 @@
 
 .footer-form-input:focus,
 .footer-form-input:hover {
-  color: #fafafa;
+  color: var(--main-white);
 }
 
-.email-message {
+.email-message,
+.comment-message {
+  position: absolute;
+
+  bottom: -18px;
+  left: 0;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
@@ -94,13 +110,13 @@
   font-size: 16px;
   letter-spacing: -0.02em;
 
-  color: #fafafa;
-  background-color: #ed3b44;
+  color: var(--main-white);
+  background-color: var(--main-red);
 }
 
 .footer-form-btn:hover,
 .footer-form-btn:focus {
-  background-color: #e0373f;
+  background-color: var(--hover-btn);
 }
 
 .footer-contacts-list {
@@ -123,7 +139,7 @@
 
 .footer-contacts-link:hover,
 .footer-contacts-link:focus {
-  border-color: #fafafa;
+  border-color: var(--main-white);
 }
 
 /* modal window */
@@ -168,7 +184,7 @@
   gap: 16px;
 }
 
-.modal-btn-close {
+.footer-modal-btn-close {
   position: absolute;
   top: 32px;
   right: 16px;
@@ -232,6 +248,11 @@
     padding: 18px 0;
   }
 
+  .form-label-wrap {
+    flex-direction: row;
+    gap: 32px;
+  }
+
   .footer-form-input {
     width: 245px;
   }
@@ -273,7 +294,19 @@
 
 /* desktop */
 @media screen and (min-width: 1440px) {
+  .footer-form {
+    gap: 86px;
+  }
+
+  .form-label-wrap {
+    gap: 32px;
+  }
+
   .footer-form-input {
     width: 390px;
+  }
+
+  .footer-form-btn {
+    margin-left: 54px;
   }
 }

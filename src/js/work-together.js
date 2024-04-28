@@ -1,19 +1,18 @@
-import {postRequests} from './api.js';
-import iziToast from "izitoast";
-import 'izitoast/dist/css/iziToast.min.css'
+import { postRequests } from './api.js';
 
 const REGEX = /^\w+(.\w+)?@[a-zA-Z_]+?.[a-zA-Z]{2,3}$/;
 
 const validateEmail = (regex, email) => {
-  return regex.test(email)
-}
+  return regex.test(email);
+};
 
 const formEl = document.getElementById('footer-form');
 const emailEl = document.getElementById('footer-form-input');
-const emailMes = document.getElementById('email-message');
 const commentEl = document.getElementById('footer-form-textarea');
+const emailMesEl = document.querySelector('.email-message');
+const commentMesEl = document.querySelector('.comment-message');
 const modal = document.getElementById('modal');
-const closeButton = document.querySelector('.modal-btn-close');
+const closeButton = document.querySelector('.footer-modal-btn-close');
 
 const handleOpenModal = data => {
   modal.classList.add('show-modal');
@@ -28,7 +27,35 @@ const handleCloseModal = () => {
   modal.classList.remove('show-modal');
 };
 
-const handleSubmit = async e => {
+const handleMailCheck = (e) => {
+  const email = e.target.value;
+
+  if (validateEmail(REGEX, email) !== false) {
+    emailMesEl.textContent = 'Success!';
+    emailMesEl.classList.remove('isErrorMessage');
+    emailMesEl.classList.add('isSuccessMessage');
+  } else if (email.length > 0) {
+    emailMesEl.textContent = 'Invalid email, try again';
+    emailMesEl.classList.remove('isSuccessMessage');
+    emailMesEl.classList.add('isErrorMessage');
+  }
+};
+
+const handleCommentCheck = (e) => {
+  const comment = e.target.value;
+
+  if (comment.trim().length > 1) {
+    commentMesEl.textContent = 'Success!';
+    commentMesEl.classList.remove('isErrorMessage');
+    commentMesEl.classList.add('isSuccessMessage');
+  } else {
+    commentMesEl.textContent = 'Please, write some text';
+    commentMesEl.classList.remove('isSuccessMessage');
+    commentMesEl.classList.add('isErrorMessage');
+  }
+};
+
+const handleSubmit = async (e) => {
   e.preventDefault();
 
   const data = {
@@ -36,50 +63,34 @@ const handleSubmit = async e => {
     comment: commentEl.value,
   };
   // checking email
-  if (validateEmail(REGEX, data.email) === false) return
+  if (validateEmail(REGEX, data.email) === false) return;
 
   // checking comment
-  if (data.comment.trim().length < 1) {
-    iziToast.error({
-      message: 'comment is not allowed to be empty',
-      position: 'bottomRight',
-    });
-    return;
-  }
+  if (data.comment.trim().length < 1) return;
+
   // send data
   try {
     const result = await postRequests(data);
     formEl.reset();
     handleOpenModal(result);
-    emailMes.textContent = ''
-    emailMes.classList.remove('isSuccessMessage' )
   } catch (error) {
-    iziToast.error({
+    handleOpenModal({
+      title: 'Error',
       message: error.message,
-      position: 'bottomRight',
-    })
+    });
   }
+
+  emailMesEl.textContent = '';
+  commentMesEl.textContent = '';
+  emailMesEl.classList.remove('isSuccessMessage', 'isErrorMessage');
+  commentMesEl.classList.remove('isSuccessMessage', 'isErrorMessage');
 };
 
+emailEl.addEventListener('blur', handleMailCheck);
+
+commentEl.addEventListener('blur', handleCommentCheck);
+
 formEl.addEventListener('submit', handleSubmit);
-
-emailEl.addEventListener('blur', (e) => {
-  const email = e.target.value
-
-  if (validateEmail(REGEX, email ) !== false) {
-    emailMes.textContent = 'Success!'
-    emailMes.classList.remove('isErrorMessage')
-    emailMes.classList.add('isSuccessMessage')
-  } else if(email.length > 0){
-    emailMes.textContent = 'Invalid email, try again'
-    emailMes.classList.remove('isSuccessMessage')
-    emailMes.classList.add('isErrorMessage')
-  } else {
-    emailMes.textContent = ''
-    emailMes.classList.remove('isSuccessMessage')
-    emailMes.classList.remove('isErrorMessage')
-  }
-})
 
 closeButton.addEventListener('click', () => {
   handleCloseModal();
