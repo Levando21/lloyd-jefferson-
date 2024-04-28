@@ -5,7 +5,7 @@
 
 .aboutus-container-story-descr {
   border-radius: 24px;
-  min-width: 340px;
+  
   max-width: 100%;
   min-height: 500px;
   background-color: #242527;
@@ -32,8 +32,6 @@
 }
 .aboutus-photo-box {
   border-radius: 24px;
-
-  min-width: 340px;
   max-width: 100%;
   min-height: 500px;
   background-image: url('../img/about-us/about-us-ceo-mobile.png');
