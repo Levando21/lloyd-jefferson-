@@ -1,4 +1,4 @@
-mport Swiper from 'swiper';
+import Swiper from 'swiper';
 import { getReviews } from './api';
 
 const reviewList = document.querySelector('.review-list');
