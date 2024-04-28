@@ -4,6 +4,9 @@
   min-height: 508px;
   overflow: hidden;
   background-image: url(./img/covers/background-mobile-1x.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .covers-container {
