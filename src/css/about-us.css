@@ -12,8 +12,29 @@
   padding: 32px;
   padding-bottom: 0;
   margin-bottom: 16px;
+  position: relative;
+  
+}
+.aboutus-container-story-descr::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  box-shadow: 0 0 8px #ED3B44;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
+.aboutus-container-story-descr:hover::before {
+  opacity: 1;
+}
+.aboutus-container-story-descr:hover .aboutus-accent-red{
+  text-shadow: 0 0 5px #ED3B44;
+  transition: text-shadow 0.5s ease;
+}
 .aboutus-story {
   font-family: 'Inter Tight', sans-serif;
   font-weight: 500;
@@ -38,6 +59,7 @@
   background-size: cover;
   margin-bottom: 12px;
 }
+
 @media (min-resolution: 192dpi) {
   .aboutus-photo-box {
     background-image: url('../img/about-us/about-us-ceo-mobile-retina.png');
@@ -65,6 +87,7 @@
   
   padding-bottom: 24px;
 }
+
 .aboutus-accord-btn-up,
 .aboutus-accord-btn-down {
   border: 1px solid rgba(250, 250, 250, 0.2);
@@ -92,6 +115,26 @@
 .aboutus-accord-btn-down:hover {
   background-color: rgba(250, 250, 250, 0.1);
   border-color: rgba(250, 250, 250, 0.5);
+}
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.aboutus-accord-btn-up,
+.aboutus-accord-btn-down #svg {
+  transition: transform 0.5s;
+
+}
+
+.aboutus-accord-btn-up:hover,
+.aboutus-accord-btn-down:hover #svg {
+  animation: rotateAnimation 2s infinite;
 }
 .aboutus-accord-dropdown {
   display: flex;
@@ -126,6 +169,7 @@ cursor: pointer;
 }
 .aboutus-skills-circle:hover {
   background-color: #ed3b44;
+  transition: background-color 0.9s ease;
 }
 
 

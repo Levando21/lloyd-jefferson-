@@ -8,6 +8,7 @@ import '../../node_modules/swiper/swiper.css';
 
 const accordionsList = document.querySelectorAll('.aboutus-accordion-item');
 
+
 //const accordions = Array.from(activeText);
 document.addEventListener('DOMContentLoaded', function () {
   accordionsList.forEach(function (item) {
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const activeText = item.querySelector('.aboutus-accord-dropdown');
     const btnDown = item.querySelector('.aboutus-accord-btn-down');
     const btnUp = item.querySelector('.aboutus-accord-btn-up');
+    
     activeText.classList.toggle('hidden');
     btnUp.classList.toggle('hidden');
     btnDown.classList.toggle('hidden');
