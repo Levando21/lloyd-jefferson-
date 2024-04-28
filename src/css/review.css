@@ -75,52 +75,6 @@
   margin-top: 32px;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  width: 68px;
-  height: 68px;
-  padding: 18px;
-  border-radius: 60px;
-  border: 1px solid #ccc;
-  opacity: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer; /* Додано вказівник курсора */
-  transition: background-color 0.3s; /* Додано плавний перехід */
-  margin-right: 20px; /* Відступ між кнопками */
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.1
-  ); /* Зміна фонового кольору при наведенні */
-}
-
-.swiper-button-prev button,
-.swiper-button-next button {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper-button-prev svg,
-.swiper-button-next svg {
-  width: 32px;
-  height: 32px;
-  fill: #ffffff; /* колір іконок */
-}
-
 /* Стилі для елемента .list-start */
 .list-start {
   max-width: 1248px; /* Максимальна ширина для .list-start */
