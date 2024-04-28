@@ -167,11 +167,6 @@
   aspect-ratio: 3/3;
 cursor: pointer;
 }
-.aboutus-skills-circle:hover {
-  background-color: #ed3b44;
-  transition: background-color 0.9s ease;
-}
-
 
 .about-us-wrapper-item{
  display: flex;
