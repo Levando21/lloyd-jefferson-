@@ -26,7 +26,7 @@
 .footer-title-img {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: 18px;
 }
 
 .footer-title-wrp {
@@ -44,7 +44,7 @@
 .form-label-wrap {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .footer-form-label {
@@ -238,9 +238,9 @@
   }
 
   .footer-title-img {
-    border-radius: 24px;
     width: 70px;
     height: 70px;
+    border-radius: 29px;
   }
 
   .footer-form {
@@ -298,8 +298,20 @@
 
 /* desktop */
 @media screen and (min-width: 1440px) {
+.work-together {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
   .footer-form {
+    display: flex;
     gap: 86px;
+  }
+
+  .footer-address {
+    display: inline-block;
   }
 
   .form-label-wrap {
@@ -310,9 +322,6 @@
     width: 390px;
   }
 
-  .footer-form-btn {
-    margin-left: 54px;
-  }
 
   .modal {
     top: 22%;
