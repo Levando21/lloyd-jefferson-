@@ -4,7 +4,9 @@
   padding-top: 32px;
   padding-bottom: 32px;
 
-  background: url("../img/work-together/footer-background-color.jpg") calc(290px - 100%) top no-repeat, var(--backround-black);
+  background: url('../img/work-together/footer-background-color.jpg')
+      calc(290px - 100%) top no-repeat,
+    var(--backround-black);
   background-size: cover;
 }
 
@@ -143,19 +145,16 @@
 }
 
 /* modal window */
-
 .backdrop {
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(15, 15, 16, 0.6);
-  z-index: 999;
-
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
@@ -165,20 +164,23 @@
 .show-modal {
   opacity: 1;
   visibility: visible;
-  pointer-events: initial;
+  pointer-events: auto;
 }
 
 .modal {
   position: relative;
   padding: 64px 32px;
+  width: 343px;
+  height: 276px;
   border: 1px solid rgba(250, 250, 250, 0.1);
   border-radius: 20px;
   background-color: var(--backround-black);
+  top: 9%;
 }
 
 .modal-content {
-  width: 279px;
-  height: 100%;
+  min-width: 279px;
+  height: 148px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -187,7 +189,7 @@
 .footer-modal-btn-close {
   position: absolute;
   top: 32px;
-  right: 16px;
+  right: 21px;
   width: 22px;
   height: 22px;
   background-color: var(--backround-black);
@@ -200,7 +202,7 @@
 }
 
 .modal-content-title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.02em;
@@ -208,6 +210,7 @@
 }
 
 .modal-content-text {
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: -0.02em;
@@ -217,7 +220,6 @@
 
 /* tablet */
 @media screen and (min-width: 768px) {
-
   /* work-together */
   .work-together {
     padding-top: 80px;
@@ -276,16 +278,18 @@
 
   /* modal */
   .modal {
-    margin: 195px auto;
     padding: 64px 64px;
     width: 492px;
+    height: 246px;
+    top: 15%;
   }
 
   .modal-content {
     width: 364px;
+    height: 118px;
   }
 
-  .modal-btn-close {
+  .footer-modal-btn-close {
     right: 32px;
     width: 24px;
     height: 24px;
@@ -308,5 +312,9 @@
 
   .footer-form-btn {
     margin-left: 54px;
+  }
+
+  .modal {
+    top: 29%;
   }
 }
