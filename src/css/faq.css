@@ -9,7 +9,7 @@
 @media only screen and (min-width: 768px) {
   .faq {
     padding-top: 25px;
-   padding-bottom: 25px;
+    padding-bottom: 25px;
   }
 }
 
@@ -19,7 +19,6 @@
     padding-bottom: 40px;
   }
 }
-
 
 .faq-header-main {
   font-weight: 600;
@@ -58,7 +57,7 @@
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .faq-container-list {
     display: flex;
     flex-wrap: wrap;
@@ -160,10 +159,6 @@
 .hidden {
   display: none;
 }
-
-
-
-
 
 @keyframes slideIn {
   0% {
