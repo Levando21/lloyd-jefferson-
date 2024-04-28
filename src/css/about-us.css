@@ -3,8 +3,6 @@
   padding-bottom: 32px;
 }
 
-
-
 .aboutus-container-story-descr {
   border-radius: 24px;
   min-width: 340px;
@@ -39,7 +37,7 @@
   max-width: 100%;
   height: 500px;
   background: center;
-  background-image: url('../img/hero/hero-ceo.png');
+  background-image: url('../img/about-us/about-us-ceo-dekstop.png');
   background-size: cover;
   margin-bottom: 12px;
 }
@@ -114,11 +112,9 @@
   padding-bottom: 10px;
 }
 /*---------------------------------- Swiper --------------------------------*/
-.aboutus-skills-swiper {
-  display: flex;
-  margin-left: 32px;
-  
-}
+
+
+
 .aboutus-skills-circle {
   display: flex;
   justify-content: center;
@@ -126,42 +122,51 @@
   background-color: transparent;
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 100px;
-  width: 200px;
-  aspect-ratio:3/3;
-
-  
-  
+  width: 130px;
+  aspect-ratio: 3/3;
+  margin: 0;
 }
-.aboutus-skills-circle:hover{
- background-color: #ed3b44;
+.aboutus-skills-circle:hover {
+  background-color: #ed3b44;
 }
 .aboutus-skills-list {
   display: flex;
-max-width: 100%;
+  max-width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .aboutus-skills-item {
   font-weight: 500;
   font-size: 20px;
   letter-spacing: -0.02em;
-    
+  cursor: pointer;
 }
 
 .aboutus-skills-btn {
   background-color: transparent;
   cursor: pointer;
   border: none;
+  margin-left: 55px;
 }
 
 .aboutus-skills-btn-icon {
-  margin-left: 72px;
-  fill: #3B3B3B;
+  fill: #fafafa;
 }
 
+
+.swiper-slide {
+}
+.aboutus-container-skills {
+  display: flex;
+  align-items: center;
+}
 /*---------------------------- Adaptive tablet ----------------------------*/
 
 @media screen and (min-width: 768px) {
-  .about-us{
+  .about-us {
     padding-bottom: 48px;
   }
   .aboutus-container-story {
@@ -186,20 +191,23 @@ max-width: 100%;
   .aboutus-accord-btn-down {
     top: 8px;
   }
+  .aboutus-skills-btn {
+    margin-left: 64px;
+  }
 }
 /*---------------------------- Adaptive desktop (1280px)----------------------------*/
 
 @media screen and (min-width: 1280px) {
-  .about-us{
+  .about-us {
     padding-top: 54px;
     padding-bottom: 76px;
   }
   .aboutus-wrap-story {
     display: flex;
-    
+
     max-width: 100%;
     gap: 16px;
-    }
+  }
   .aboutus-container-story-descr {
     min-width: 50%;
     height: 700px;
@@ -208,7 +216,7 @@ max-width: 100%;
     min-width: 50%;
     height: 700px;
   }
-  
+
   .aboutus-accord-dropdown {
     margin-left: 50%;
     margin-right: 60px;
@@ -216,6 +224,15 @@ max-width: 100%;
   }
 
   .aboutus-dscr-accordion {
-   max-width: 612px;
+    max-width: 612px;
+  }
+  .aboutus-container-skills {
+    margin-left: 32px;
+  }
+  .aboutus-skills-circle {
+    min-width: 200px;
+  }
+  .aboutus-skills-btn {
+    margin-left: 72px;
   }
 }

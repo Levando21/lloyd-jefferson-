@@ -12,18 +12,18 @@
       </div>
       <div class="aboutus-photo-box"></div>
     </div>
-    <ul class="aboutus-accordion">
+    <ul class="aboutus-accordion accordion">
       <li class="aboutus-accordion-item">
         <h2 class="aboutus-title-accordion">ABOUT ME</h2>
-        <button class="aboutus-accord-btn-up hidden" type="button">
+        <button class="aboutus-accord-btn-up" type="button">
           <svg class="aboutus-accord-arrow-up" width="20" height="20">
             <use href="../img/svg/icons.svg#icon-keyboard_arrow_up"></use>
           </svg>
         </button>
 
-        <button class="aboutus-accord-btn-down" type="button">
+        <button class="aboutus-accord-btn-down hidden" type="button">
           <svg class="aboutus-accord-arrow-down" width="20" height="20">
-            <use href="./img/svg/icons.svg#icon-keyboard_arrow_down"></use>
+            <use href="../img/svg/icons.svg#icon-keyboard_arrow_down"></use>
           </svg>
         </button>
 
@@ -55,16 +55,16 @@
         <h2 class="aboutus-title-accordion">ROLE</h2>
         <button class="aboutus-accord-btn-up hidden" type="button">
           <svg class="aboutus-accord-arrow-up" width="20" height="20">
-            <use href="./img/svg/icons.svg#icon-keyboard_arrow_up"></use>
+            <use href="../img/svg/icons.svg#icon-keyboard_arrow_up"></use>
           </svg>
         </button>
 
         <button class="aboutus-accord-btn-down" type="button">
           <svg class="aboutus-accord-arrow-down" width="20" height="20">
-            <use href="./img/svg/icons.svg#icon-keyboard_arrow_down"></use>
+            <use href="../img/svg/icons.svg#icon-keyboard_arrow_down"></use>
           </svg>
         </button>
-        <div class="aboutus-accord-dropdown">
+        <div class="aboutus-accord-dropdown hidden">
           <ul>
             <li class="aboutus-dscr-accordion-item">Frontend development</li>
             <li class="aboutus-dscr-accordion-item">HeadlessCMS,Wordpress</li>
@@ -76,16 +76,16 @@
         <h2 class="aboutus-title-accordion">EDUCATION</h2>
         <button class="aboutus-accord-btn-up hidden" type="button">
           <svg class="aboutus-accord-arrow-up" width="20" height="20">
-            <use href="./img/svg/icons.svg#icon-keyboard_arrow_up"></use>
+            <use href="../img/svg/icons.svg#icon-keyboard_arrow_up"></use>
           </svg>
         </button>
 
         <button class="aboutus-accord-btn-down" type="button">
           <svg class="aboutus-accord-arrow-down" width="20" height="20">
-            <use href="./img/svg/icons.svg#icon-keyboard_arrow_down"></use>
+            <use href="../img/svg/icons.svg#icon-keyboard_arrow_down"></use>
           </svg>
         </button>
-        <div class="aboutus-accord-dropdown">
+        <div class="aboutus-accord-dropdown hidden">
           <ul>
             <li class="aboutus-dscr-accordion-item">
               2018 - 2019 / Frontend Development Diploma, GoIT IT School, New
@@ -102,32 +102,35 @@
         </div>
       </li>
     </ul>
-    <div class="aboutus-skills-swiper">
-      <ul class="aboutus-skills-list">
-        <div class="aboutus-skills-circle">
-          <li class="aboutus-skills-item">HTML/CSS</li>
-        </div>
-        <div class="aboutus-skills-circle">
-          <li class="aboutus-skills-item">JavaScript</li>
-        </div>
-        <div class="aboutus-skills-circle">
-          <li class="aboutus-skills-item">React</li>
-        </div>
-        <div class="aboutus-skills-circle">
-          <li class="aboutus-skills-item">Node.js</li>
-        </div>
-        <div class="aboutus-skills-circle">
-          <li class="aboutus-skills-item">React Native</li>
-        </div>
-        <div class="aboutus-skills-circle">
-          <li class="aboutus-skills-item">Soft skills</li>
-        </div>
-        <button class="aboutus-skills-btn" type="button">
-          <svg class="aboutus-skills-btn-icon" width="40" height="40">
-            <use href="./img/svg/icons.svg#icon-arrow_forward"></use>
-          </svg>
-        </button>
-      </ul>
+    <div class="aboutus-container-skills">
+      <div class="aboutus-skills-swiper swiper">
+        <ul class="swiper-wrapper aboutus-skills-list">
+          <div class="aboutus-skills-circle swiper-slide">
+            <li class="aboutus-skills-item" id="1">HTML/CSS</li>
+          </div>
+          <div class="aboutus-skills-circle swiper-slide">
+            <li class="aboutus-skills-item" id="2">JavaScript</li>
+          </div>
+          <div class="aboutus-skills-circle swiper-slide">
+            <li class="aboutus-skills-item" id="3">React</li>
+          </div>
+          <div class="aboutus-skills-circle swiper-slide">
+            <li class="aboutus-skills-item" id="4">Node.js</li>
+          </div>
+          <div class="aboutus-skills-circle swiper-slide">
+            <li class="aboutus-skills-item" id="5">React Native</li>
+          </div>
+          <div class="aboutus-skills-circle swiper-slide">
+            <li class="aboutus-skills-item" id="6">Soft skills</li>
+          </div>
+        </ul>
+      </div>
+
+      <button class="swiper-button-next aboutus-skills-btn" type="button">
+        <svg class="aboutus-skills-btn-icon" width="40" height="40">
+          <use href="../img/svg/icons.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
