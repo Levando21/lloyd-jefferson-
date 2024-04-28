@@ -281,7 +281,7 @@
     padding: 64px 64px;
     width: 492px;
     height: 246px;
-    top: 15%;
+    top: 3%;
   }
 
   .modal-content {
@@ -315,6 +315,6 @@
   }
 
   .modal {
-    top: 29%;
+    top: 22%;
   }
 }
