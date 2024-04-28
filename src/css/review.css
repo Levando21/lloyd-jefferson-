@@ -1,7 +1,7 @@
 /* Стилі для секції з відгуками */
 .reviews-section {
   display: flex;
-  color: #FAFAFA66; /* Колір тексту */
+  color: #fafafa66; /* Колір тексту */
 }
 
 /* Стилі для заголовка "REVIEW" */
@@ -65,7 +65,7 @@
 }
 
 .review-author {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 /* Стилі для кнопок "Попередній" і "Наступний" */
@@ -93,7 +93,12 @@
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Зміна фонового кольору при наведенні */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Зміна фонового кольору при наведенні */
 }
 
 .swiper-button-prev button,
