@@ -3,7 +3,7 @@
   margin: 0 auto;
   min-height: 508px;
   overflow: hidden;
-  background-image: url(../img/covers/background-mobile-1x.png);
+  background-image: url(./img/covers/background-mobile-1x.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -59,7 +59,7 @@
 
 @media (min-resolution: 192dpi) {
   .covers {
-    background-image: url(../img/covers/background-mobile-2x.png);
+    background-image: url(./img/covers/background-mobile-2x.png);
   }
 }
 
@@ -67,7 +67,7 @@
   .covers {
     max-width: 768px;
     min-height: 906px;
-    background-image: url(../img/covers/background-tablet-1x.png);
+    background-image: url(./img/covers/background-tablet-1x.png);
   }
   .covers-inner {
     gap: 31px;
@@ -77,14 +77,14 @@
 
 @media only screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .covers {
-    background-image: url(../img/covers/background-tablet-2x.png);
+    background-image: url(./img/covers/background-tablet-2x.png);
   }
 }
 
 @media screen and (min-width: 1440px) {
   .covers {
     max-width: 1440px;
-    background-image: url(../img/covers/background-dekstop-1x.png);
+    background-image: url(./img/covers/background-dekstop-1x.png);
   }
   .covers-inner {
     gap: 55px;
@@ -94,6 +94,6 @@
 
 @media only screen and (min-width: 1440px) and (min-resolution: 192dpi) {
   .covers {
-    background-image: url(../img/covers/background-dekstop-2x.png);
+    background-image: url(./img/covers/background-dekstop-2x.png);
   }
 }
