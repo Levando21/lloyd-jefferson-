@@ -4,7 +4,9 @@ a:visited,
 a:hover {
   text-decoration: none;
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}
 body,
 h1,
 h2,
