@@ -18,8 +18,6 @@
 }
 
 .hero-cont {
-
-    align-items: center;
     padding-top: 281px;
     padding-bottom: 32px;
 }
@@ -54,6 +52,11 @@
     padding: 10px 10px;
     width: 37px;
     height: 37px;
+}
+
+.soc-networks-items:hover,
+.soc-networks-items:focus {
+    border-color: #fafafa;
 }
 
 .git-hub{
