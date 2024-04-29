@@ -1,6 +1,5 @@
 const coversSection = document.querySelector('.covers');
 const coversLine = document.querySelectorAll('.covers-line');
-console.log(coversLine);
 
 const options = {
   root: null,
