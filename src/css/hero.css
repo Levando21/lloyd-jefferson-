@@ -7,8 +7,8 @@
 }
 
 @media (min-device-pixel-ratio: 2),
-(min-resolution: 192dpi),
-(min-resolution: 2dppx) {
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
   .hero-bg {
     background-image: url('/img/hero/hero2x_1.webp');
   }
@@ -23,7 +23,7 @@
   font-weight: 500;
   font-size: 50px;
   line-height: 100%;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.06em;
   text-transform: uppercase;
   color: var(--main-white);
   margin-bottom: 212px;
@@ -71,20 +71,17 @@
 @media screen and (max-width: 375px) {
   .ul-hero {
     justify-content: left;
-    gap: 8px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .hero-bg {
     background-image: url('/img/hero/desk-hero-1x.webp');
-
   }
 
   @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
     .hero-bg {
       background-image: url('/img/hero/desk-hero-2x.webp');
     }
@@ -164,8 +161,8 @@
     }
 
     @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
       .hero-bg {
         background-image: url('/img/hero/Herox2.png');
       }
@@ -178,6 +175,5 @@
       margin-left: auto;
       margin-right: auto;
     }
-
   }
 }
