@@ -5,16 +5,15 @@ import Swiper from 'swiper';
 import '../../node_modules/swiper/swiper.css';
 
 // Accordion //
-
 const accordionsList = document.querySelectorAll('.aboutus-accordion-item');
 
-
-//const accordions = Array.from(activeText);
 document.addEventListener('DOMContentLoaded', function () {
   accordionsList.forEach(function (item) {
     
     const btnDown = item.querySelector('.aboutus-accord-btn-down');
     const btnUp = item.querySelector('.aboutus-accord-btn-up');
+
+    
     btnDown.addEventListener('click', function () {
       activity(item);
     });
@@ -28,9 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnDown = item.querySelector('.aboutus-accord-btn-down');
     const btnUp = item.querySelector('.aboutus-accord-btn-up');
     
+    //activeText.classList.toggle('active'); 
     activeText.classList.toggle('hidden');
     btnUp.classList.toggle('hidden');
     btnDown.classList.toggle('hidden');
+    //if (activeText.classList.contains('active')) {
+     // activeText.style.maxHeight = activeText.scrollHeight + 'px'; 
+    //} else {
+     // activeText.style.maxHeight = '0'; 
+    //}
   }
 });
 
