@@ -14,13 +14,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnUp = item.querySelector('.aboutus-accord-btn-up');
     if (index === 0) {
       activeText.classList.toggle('hidden');
-      activeText.classList.add('active'); 
-      
-      btnDown.classList.add('hidden'); 
+      activeText.classList.add('active');
+
+      btnDown.classList.add('hidden');
       btnUp.classList.remove('hidden');
- 
     }
-    
+    btnUp.addEventListener('mouseenter', function () {
+      titleAccordion.classList.add('hovered');
+    });
+
+    btnUp.addEventListener('mouseleave', function () {
+      titleAccordion.classList.remove('hovered');
+    });
+
+    btnDown.addEventListener('mouseenter', function () {
+      titleAccordion.classList.add('hovered');
+    });
+
+    btnDown.addEventListener('mouseleave', function () {
+      titleAccordion.classList.remove('hovered');
+    });
+
     btnDown.addEventListener('click', function () {
       activity(item);
     });
@@ -33,13 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const activeText = item.querySelector('.aboutus-accord-dropdown');
     const btnDown = item.querySelector('.aboutus-accord-btn-down');
     const btnUp = item.querySelector('.aboutus-accord-btn-up');
-    
-    activeText.classList.toggle('active'); 
+
+    activeText.classList.toggle('active');
     activeText.classList.toggle('hidden');
     btnUp.classList.toggle('hidden');
     btnDown.classList.toggle('hidden');
     if (activeText.classList.contains('active')) {
-
       activeText.style.maxHeight = activeText.scrollHeight + 'px'; // Встановлення максимальної висоти
     } else {
       activeText.style.maxHeight = '0'; // Сховати панель акордеону
@@ -53,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const slides = document.querySelectorAll('.aboutus-skills-circle');
   const swiperWrapper = document.querySelector('.swiper-wrapper');
   slides.forEach((slide, index) => {
-    const clone = slide.cloneNode(true); 
-    swiperWrapper.appendChild(clone); 
+    const clone = slide.cloneNode(true);
+    swiperWrapper.appendChild(clone);
   });
 
   const swiper = new Swiper('.aboutus-skills-swiper', {
@@ -74,11 +87,12 @@ document.addEventListener('DOMContentLoaded', function () {
       // Налаштування для мобільних пристроїв
       320: {
         slidesPerView: 2,
-      }
+      },
     },
     on: {
       init: function () {
-        document.querySelector('.swiper-slide').style.backgroundColor = '#ed3b44';
+        document.querySelector('.swiper-slide').style.backgroundColor =
+          '#ed3b44';
       },
       slideChange: function () {
         const previousSlide = this.slides[this.previousIndex];
@@ -88,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     },
   });
-
 
   const btnNext = document.querySelector('.aboutus-skills-btn');
   btnNext.addEventListener('click', () => {
