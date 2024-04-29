@@ -22,8 +22,6 @@
 
 }
 
-
-
 @media (min-width: 768px) {
     .projects-img-box {
         margin-bottom: 64px;
@@ -133,11 +131,7 @@
     box-sizing: border-box;
     background: rgba(36, 37, 39, 1);
     overflow: hidden;
-
 }
-
-
-
 
 
 @media (min-width: 1440px) {
