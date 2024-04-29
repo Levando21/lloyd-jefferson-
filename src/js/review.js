@@ -1,36 +1,43 @@
 import Swiper from 'swiper';
-import { Navigation, Keyboard } from 'swiper/modules';
-import { getPortfolioReviews } from './api.js';
+import {Navigation, Keyboard} from 'swiper/modules';
+import iziToast from "izitoast";
+import 'izitoast/dist/css/iziToast.min.css'
+
+import {getReviewsApi} from './api.js';
+
 const reviewsList = document.querySelector('.reviews-list');
+const reviewsWrap = document.querySelector('.reviews-swiper')
 
-getPortfolioReviews()
-  .then(response => {
-    if (!response.statusText === 'OK') {
-      throw new Error('Empty response data');
+const getReviews = async () => {
+  try {
+    const reviews = await getReviewsApi();
+
+    if (reviews.length > 0) {
+      renderReviewsEl(reviews)
+    } else {
+      renderNotFoundEl()
     }
+  } catch (e) {
+    renderNotFoundEl()
+    iziToast.error({
+      message: e.message,
+      position: 'bottomRight',
+    });
+  }
+}
 
-    renderReviews(response.data, reviewsList, true);
-  })
-  .catch(() => {
-    showMessage('Server error. Please try again!');
-    renderReviews([], reviewsList, false);
-  });
-
-function renderReviews(reviews, reviewList, ok) {
-  if (ok) {
-    const reviewHTML = reviews
-      .map(
-        ({ _id, author, avatar_url, review }) =>
-          `<li class="reviews-list-item swiper-slide" id="review-${_id}" aria-label="review">
+const renderReviewsEl = (reviews) => {
+  const reviewItems = reviews.map(({_id, author, avatar_url, review}) => (
+    `<li class="reviews-list-item swiper-slide" id="review-${_id}" aria-label="review">
           <picture>
-            <source srcset="${avatar_url}" 
+            <source srcset="${avatar_url}"
               type="image/jpeg">
-              <img 
-                class="review-photo" 
-                src="${avatar_url}" 
-                alt="${author} photo" 
-                width="48" 
-                height="48" 
+              <img
+                class="review-photo"
+                src="${avatar_url}"
+                alt="${author} photo"
+                width="48"
+                height="48"
                 loading="lazy"
               />
           </picture>
@@ -38,16 +45,18 @@ function renderReviews(reviews, reviewList, ok) {
           <div class="review-text-container">
             <p class="review-text" aria-label="review text">${review}</p>
           </div>
-          
-      </li>`
-      )
-      .join('');
+      </li>`)).join('');
 
-    reviewList.insertAdjacentHTML('beforeend', reviewHTML);
-  } 
+  reviewsList.innerHTML = reviewItems;
 }
 
+const renderNotFoundEl = (text = 'Not found') => {
+  const p = document.createElement('p')
+  p.textContent = text
+  reviewsWrap.insertAdjacentElement('afterbegin', p)
+}
 
+getReviews()
 
 const reviewsSwiper = new Swiper('.reviews-swiper', {
   modules: [Navigation, Keyboard],
