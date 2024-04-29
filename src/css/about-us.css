@@ -178,6 +178,11 @@
   letter-spacing: -0.02em;
 }
 
+.aboutus-title-accordion.hovered {
+  text-shadow: 0 0 5px #ed3b44;
+  transition: text-shadow 0.5s ease;
+}
+
 /*---------------------------------- Swiper --------------------------------*/
 
 .aboutus-skills-circle {
