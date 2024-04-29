@@ -5,15 +5,35 @@
 
 .aboutus-container-story-descr {
   border-radius: 24px;
-  min-width: 340px;
+
   max-width: 100%;
   min-height: 500px;
   background-color: #242527;
   padding: 32px;
   padding-bottom: 0;
   margin-bottom: 16px;
+  position: relative;
+}
+.aboutus-container-story-descr::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  box-shadow: 0 0 8px #ed3b44;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
+.aboutus-container-story-descr:hover::before {
+  opacity: 1;
+}
+.aboutus-container-story-descr:hover .aboutus-accent-red {
+  text-shadow: 0 0 5px #ed3b44;
+  transition: text-shadow 0.5s ease;
+}
 .aboutus-story {
   font-family: 'Inter Tight', sans-serif;
   font-weight: 500;
@@ -32,19 +52,23 @@
 }
 .aboutus-photo-box {
   border-radius: 24px;
-
-  min-width: 340px;
   max-width: 100%;
   min-height: 500px;
   background-image: url('../img/about-us/about-us-ceo-mobile.png');
   background-size: cover;
   margin-bottom: 12px;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
 }
+
 @media (min-resolution: 192dpi) {
   .aboutus-photo-box {
     background-image: url('../img/about-us/about-us-ceo-mobile-retina.png');
   }
 }
+/*---------------------------------- Accordion --------------------------------*/
+
 .aboutus-accordion {
   display: flex;
   flex-direction: column;
@@ -64,9 +88,10 @@
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: rgba(250, 250, 250, 0.4);
-  
+
   padding-bottom: 24px;
 }
+
 .aboutus-accord-btn-up,
 .aboutus-accord-btn-down {
   border: 1px solid rgba(250, 250, 250, 0.2);
@@ -95,15 +120,42 @@
   background-color: rgba(250, 250, 250, 0.1);
   border-color: rgba(250, 250, 250, 0.5);
 }
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.aboutus-accord-btn-up,
+.aboutus-accord-btn-down svg {
+  transition: transform 0.5s;
+}
+
+.aboutus-accord-btn-up:hover,
+.aboutus-accord-btn-down:hover svg {
+  animation: rotateAnimation 2s infinite;
+}
 .aboutus-accord-dropdown {
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+  max-height: 650px;
+
+ 
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
 }
+
+
 .aboutus-dscr-accordion {
   letter-spacing: -0.02em;
 }
-.aboutus-accordion-list{
+.aboutus-accordion-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -111,12 +163,10 @@
 .aboutus-dscr-accordion-item {
   letter-spacing: -0.02em;
 }
+
 /*---------------------------------- Swiper --------------------------------*/
 
-
-
 .aboutus-skills-circle {
-
   justify-content: center;
   align-items: center;
   background-color: transparent;
@@ -124,24 +174,22 @@
   border-radius: 100px;
   width: 130px;
   aspect-ratio: 3/3;
-cursor: pointer;
-}
-.aboutus-skills-circle:hover {
-  background-color: #ed3b44;
+  cursor: pointer;
 }
 
-
-.about-us-wrapper-item{
- display: flex;
-
+.about-us-wrapper-item {
+  display: flex;
 }
-#swiper-slide{
+li.swiper-slide {
   display: flex;
 }
 .aboutus-skills-item {
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: -0.02em;
-
+}
+@media screen and (min-width: 375px) {
+  .aboutus-skills-item {
+  font-size: 20px;}
 }
 
 .aboutus-skills-btn {
@@ -149,15 +197,41 @@ cursor: pointer;
   cursor: pointer;
   border: none;
   margin-left: 55px;
+
+}
+
+
+@keyframes wiggle-right {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .aboutus-skills-btn-icon {
-  fill: #fafafa;
+  fill: #3B3B3B;
+  animation: wiggle-right 1s infinite;
+  
+  
+    
 }
-
 .aboutus-container-skills {
   display: flex;
-  
 }
 /*---------------------------- Adaptive tablet ----------------------------*/
 
@@ -179,11 +253,11 @@ cursor: pointer;
     min-height: 700px;
     background-image: url('../img/about-us/about-us-ceo-tablet.png');
   }
-    @media (min-resolution: 192dpi) {
-      .aboutus-photo-box {
-        background-image: url('../img/about-us/about-us-ceo-tablet-ritina.png');
-      }
+  @media (min-resolution: 192dpi) {
+    .aboutus-photo-box {
+      background-image: url('../img/about-us/about-us-ceo-tablet-ritina.png');
     }
+  }
   .aboutus-accordion {
     margin-bottom: 64px;
   }
@@ -197,6 +271,11 @@ cursor: pointer;
   .aboutus-skills-btn {
     margin-left: 64px;
   }
+    .aboutus-skills-btn-icon {
+      width:40px;
+       height:40px;
+    }
+    
 }
 /*---------------------------- Adaptive desktop (1440px)----------------------------*/
 
@@ -213,7 +292,6 @@ cursor: pointer;
   }
   .aboutus-container-story-descr {
     min-width: 50%;
-    
   }
   .aboutus-photo-box {
     min-width: 50%;
@@ -239,5 +317,7 @@ cursor: pointer;
   .aboutus-skills-btn {
     margin-left: 72px;
   }
+    .aboutus-skills-btn-icon {
+      animation: none;
+    }
 }
-

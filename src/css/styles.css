@@ -30,6 +30,8 @@
 /*----------------------------Other----------------------------*/
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -37,6 +39,8 @@ body {
   scroll-behavior: smooth;
   font-family: 'DM Sans', sans-serif;
   color: #fff;
+  width: 100%;
+  height: 100%;
 }
 
 /*---------------------------- Adaptive mobile ----------------------------*/
@@ -82,3 +86,9 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+

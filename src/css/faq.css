@@ -9,7 +9,7 @@
 @media only screen and (min-width: 768px) {
   .faq {
     padding-top: 25px;
-   padding-bottom: 25px;
+    padding-bottom: 25px;
   }
 }
 
@@ -19,7 +19,6 @@
     padding-bottom: 40px;
   }
 }
-
 
 .faq-header-main {
   font-weight: 600; 
@@ -57,7 +56,7 @@
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .faq-container-list {
     display: flex;
     flex-wrap: wrap;
@@ -198,5 +197,33 @@
 }
 
 
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.5s forwards;
+}
 
