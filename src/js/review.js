@@ -1,19 +1,23 @@
-import Swiper from 'swiper'; // Імпорт Swiper для реалізації слайдера
-import { getReviews } from './api'; // Імпорт функції для отримання відгуків з сервера
+import Swiper from 'swiper';
+import { getReviews } from './api';
 
 // Функція для створення HTML розмітки для кожного відгуку
 function reviewMarkup(reviews) {
   return reviews
     .map(
       review =>
-        `<li class="review-item">
+        `<li class="swiper-slide review-item">
           <img
             class="review-avatar"
             src="${review.avatar_url}"
             alt="${review.author}'s avatar"
           />
           <h3 class="review-author">${review.author}</h3>
-          <p class="review-text">${review.review}</p>
+          <p class="review-text" style="
+           padding-right: 0px;
+           width: 284px;
+           height: 158px;
+          ">It's not the will to win that matters—everyone has that. It's the will to prepare to win that matters.</p>
         </li>`
     )
     .join('');
@@ -22,72 +26,53 @@ function reviewMarkup(reviews) {
 // Функція для відображення відгуків
 const appearReviews = async () => {
   try {
-    const reviewList = document.querySelector('.review-list'); // Елемент списку відгуків
-    const prevButton = document.querySelector('.swiper-button-prev'); // Кнопка "Попередній"
-    const nextButton = document.querySelector('.swiper-button-next'); // Кнопка "Наступний"
+    const reviewList = document.querySelector('.review-list');
+    const prevButton = document.querySelector('.swiper-button-prev');
+    const nextButton = document.querySelector('.swiper-button-next');
 
-    let currentIndex = 0; // Поточний індекс відгука
-
-    // Функція для перемикання коментарів
-    function switchComments(direction) {
-      currentIndex += direction; // Змінити поточний індекс на вказане значення
-
-      if (currentIndex < 0) {
-        currentIndex = 0;
-      } else if (currentIndex >= reviewList.children.length) {
-        currentIndex = reviewList.children.length - 1;
-      }
-
-      const offset = -currentIndex * reviewList.children[0].offsetWidth; // Обчислити зсув для переміщення списку відгуків
-      reviewList.style.transform = `translateX(${offset}px)`; // Застосувати зсув до списку відгуків
+    const res = await getReviews();
+    if (!res || res.length === 0) {
+      throw new Error('Reviews not found');
     }
 
-    prevButton.addEventListener('click', () => {
-      switchComments(-1); // Перемикання до попереднього відгука при натисканні на кнопку "Попередній"
-    });
+    const reviewsHTML = reviewMarkup(res);
+    reviewList.innerHTML = '<ul class="swiper-wrapper">' + reviewsHTML + '</ul>';
 
-    nextButton.addEventListener('click', () => {
-      switchComments(1); // Перемикання до наступного відгука при натисканні на кнопку "Наступний"
-    });
-
-    const res = await getReviews(); // Отримати відгуки з сервера
-    const reviewsHTML = reviewMarkup(res); // Створити HTML розмітку для відгуків
-    reviewList.insertAdjacentHTML('beforeend', reviewsHTML); // Вставити HTML розмітку у список відгуків
-
-    const screenWidth = window.innerWidth; // Отримати ширину екрану
-
-    let slidesPerView = 6; // Кількість відгуків на екрані за замовчуванням
+    const screenWidth = window.innerWidth;
+    let slidesPerView = 1;
 
     if (screenWidth >= 1440) {
-      slidesPerView = 4; // Налаштування для широкого екрану
-    } else if (screenWidth >= 769) {
-      slidesPerView = 2; // Налаштування для планшетів
-    } else {
-      slidesPerView = 1; // Налаштування для мобільних пристроїв
+      slidesPerView = 4;
+    } else if (screenWidth >= 758) {
+      slidesPerView = 2;
     }
 
-    const swiper = new Swiper('.review-list-swiper', {
-      // Налаштування Swiper
+    const swiper = new Swiper('.review-list', {
       speed: 400,
       spaceBetween: 0,
       loop: true,
       setWrapperSize: true,
       slidesPerView: slidesPerView,
-      breakpoints: {
-        1440: { slidesPerView: 4 }, // Відображати 4 коментарі при ширині більше або рівній 1440px
-        769: { slidesPerView: 2 }, // Відображати 2 коментарі при ширині від 769px до 1439px
-        375: { slidesPerView: 1 }, // Відображати 1 коментар при ширині менше або рівній 375px
-        320: { slidesPerView: 1 } // Відображати 1 коментар при ширині від 320px до 768px
-      }
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
     });
 
-    swiper.on('slideChange', () => {
-      currentIndex = swiper.realIndex; // Оновити поточний індекс на поточний слайд
+    // Додавання функціональності до кнопок "Prev" та "Next" з використанням методів Swiper
+    prevButton.addEventListener('click', () => {
+      swiper.slidePrev();
+    });
+
+    nextButton.addEventListener('click', () => {
+      swiper.slideNext();
     });
 
   } catch (error) {
-    console.error('Error fetching reviews:', error); // Обробка помилок під час отримання відгуків
+    console.error('Error fetching or displaying reviews:', error);
+    alert('Error fetching reviews. Please try again later.');
+    reviewList.innerHTML = '<p class="not-found">Not found</p>';
   }
 };
 
-appearReviews(); // Викликаємо функцію для відображення відгуків
+appearReviews();
