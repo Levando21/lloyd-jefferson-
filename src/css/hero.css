@@ -1,179 +1,161 @@
-.hero-bg {
-  width: 100%;
-  background-image: url('/img/hero/hero_1.webp');
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: cover;
-}
-
-@media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  .hero-bg {
-    background-image: url('/img/hero/hero2x_1.webp');
-  }
-}
-
-.hero-cont {
-  padding-top: 281px;
-  padding-bottom: 32px;
-}
-
-.hero-title {
-  font-weight: 500;
-  font-size: 50px;
-  line-height: 100%;
-  letter-spacing: -0.06em;
-  text-transform: uppercase;
-  color: var(--main-white);
-  margin-bottom: 212px;
-}
-
-.ul-hero {
+.header {
+  position: absolute;
+  width: 375px;
   display: flex;
+  justify-content: space-between;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.header.container {
+  padding-top: 32px;
+}
+.header-left {
+  display: flex;
+  gap: 8px;
+}
+.img-header {
+  width: 80px;
+  height: 80px;
+}
+.menu-center {
+  width: 74px;
+  position: relative;
+  display: none;
+  text-align: center;
+  text-decoration: underline;
+}
+.menu-center-open {
+  text-align: center;
+  cursor: pointer;
+}
+.menu-center-list {
+  width: auto;
+  display: none;
+  position: absolute;
+}
+.menu-center-list.is-open {
+  display: block;
+}
+.menu-center-item a {
+  text-decoration: none;
+  color: #fafafa;
+}
+.menu-center-item a:hover {
+  color: #ed3b44;
+}
+.icon-header-logo {
+  fill: #fafafa;
+}
+.header-icon-burger {
+  fill: #fafafa;
+}
+.btn-menu-tablet {
+  display: none;
+  color: #fafafa;
+  height: 50px;
+  padding: 14px 31px;
+  border-radius: 20px;
+  border: none;
+  background-color: #ed3b44;
+}
+.btn-menu-tablet:hover,
+.btn-menu-tablet:focus {
+  background-color: #e0373f;
+}
+/* menu */
+.modal-header {
+  opacity: 0;
+  transition: opacity 0.5s, height 0.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-image: url(../img/header/Glass-effect-1.png);
+  background-size: cover;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 4px;
-  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
 }
-
-.soc-networks-items {
-  display: inline-block;
-  font-size: 14px;
-  border-radius: 60px;
-  letter-spacing: -0.02em;
-  padding: 10px;
-  line-height: 1.2;
-  color: var(--main-white);
-  border: 1px solid rgba(250, 250, 250, 0.2);
-  border: 1px solid rgba(250, 250, 250, 0.2);
-  border-radius: 60px;
-  padding: 10px 10px;
-  width: 37px;
-  height: 37px;
-}
-
-.soc-networks-items:hover {
-  border-color: #fafafa;
-}
-
-.git-hub {
-  padding: 10px 7px;
-}
-
-.email-link {
-  border: 1px solid rgba(250, 250, 250, 0.2);
-  border-radius: 60px;
-  padding: 10px 8px;
-  width: 178px;
-  height: 37px;
-}
-
-@media screen and (max-width: 375px) {
-  .ul-hero {
-    justify-content: left;
+@media (min-resolution: 192dpi) {
+  .modal-header {
+    background-image: url(../img/header/Glass-effect-12x.png);
   }
 }
-
-@media screen and (min-width: 768px) {
-  .hero-bg {
-    background-image: url('/img/hero/desk-hero-1x.webp');
+.modal-header.is-open {
+  opacity: 1;
+  height: 100%;
+}
+.modal-btn-close {
+  display: none;
+  position: absolute;
+  top: 32px;
+  right: 18px;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border: none;
+  background-color: transparent;
+  z-index: 1;
+}
+.header-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.menu-icon-close {
+  fill: #fafafa;
+}
+.menu-list {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  align-items: center;
+}
+.menu-item a {
+  color: #fafafa;
+  text-decoration: underline;
+}
+.btn-menu {
+  position: absolute;
+  bottom: 64px;
+  color: #fafafa;
+  padding: 14px 31px;
+  border-radius: 20px;
+  border: none;
+  background-color: #ed3b44;
+}
+.btn-menu:hover {
+  background-color: #e0373f;
+}
+@media only screen and (min-width: 768px) {
+  .header {
+    position: absolute;
+    width: 768px;
+    display: flex;
+    justify-content: space-between;
   }
-
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    .hero-bg {
-      background-image: url('/img/hero/desk-hero-2x.webp');
-    }
+  .header-right {
+    display: none;
   }
-
-  .hero-cont {
-    padding-top: 300px;
+  .menu-center {
+    display: block;
   }
-
-  .hero-title {
-    font-size: 90px;
-    margin-bottom: 187px;
-    /*max-width: 632px;*/
-    letter-spacing: -0.03em;
+  .btn-menu-tablet {
+    display: block;
   }
-
-  .ul-hero {
-    gap: 8px;
-    justify-content: flex-end;
-  }
-
-  .soc-networks-items {
-    padding: 18px 20px;
-    width: 55px;
-    height: 55px;
-  }
-
-  .git-hub {
-    padding: 18px 16px;
-  }
-
-  .email-link {
-    padding: 18px 24px;
-    width: 223px;
-    height: 55px;
-
-    .hero-cont {
-      padding-top: 300px;
-    }
-
-    .hero-title {
-      font-size: 90px;
-      margin-bottom: 187px;
-      max-width: 632px;
-      letter-spacing: -0.03em;
-    }
-
-    .ul-hero {
-      gap: 8px;
-      justify-content: flex-end;
-    }
-
-    .soc-networks-items {
-      padding: 18px 20px;
-      width: 55px;
-      height: 55px;
-    }
-
-    .git-hub {
-      padding: 18px 16px;
-    }
-
-    .email-link {
-      padding: 18px 24px;
-      width: 223px;
-      height: 55px;
-    }
-  }
-
-  @media screen and (min-width: 1440px) {
-    .hero-position-nav {
-      width: 100%;
-    }
-
-    .hero-bg {
-      background-image: url('/img/hero/Herox1.png');
-    }
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      .hero-bg {
-        background-image: url('/img/hero/Herox2.png');
-      }
-    }
-
-    .hero-title {
-      font-size: 90px;
-      max-width: 1084px;
-      margin-bottom: 243px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+}
+@media only screen and (min-width: 1440px) {
+  .header {
+    position: absolute;
+    width: 1440px;
+    display: flex;
+    justify-content: space-between;
   }
 }
