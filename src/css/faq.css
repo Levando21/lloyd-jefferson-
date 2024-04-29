@@ -21,8 +21,7 @@
 }
 
 .faq-header-main {
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 600; 
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: rgba(250, 250, 250, 0.4);
@@ -138,19 +137,56 @@
   color: #fafafa;
 }
 
+
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.faq-btn-up,
+.faq-btn-down svg {
+  transition: transform 0.5s;
+
+}
+
+.faq-btn-up:hover,
+.faq-btn-down:hover svg {
+  animation: rotateAnimation 2s infinite;
+}
+
+
 .faq-btn-up:focus,
 .faq-btn-down:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
+
 .faq-list.active .faq-panel {
   display: block;
 }
 
+
+ .faq-panel {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.faq-panel.active {
+  opacity: 1;
+  max-height: 1000px; 
+} 
+
 .faq-text {
   font-weight: 500;
-  font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: rgba(250, 250, 250, 0.6);
@@ -159,6 +195,7 @@
 .hidden {
   display: none;
 }
+
 
 @keyframes slideIn {
   0% {
@@ -189,3 +226,4 @@
 .slide-out {
   animation: slideOut 0.5s forwards;
 }
+
