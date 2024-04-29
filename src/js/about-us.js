@@ -8,11 +8,18 @@ import '../../node_modules/swiper/swiper.css';
 const accordionsList = document.querySelectorAll('.aboutus-accordion-item');
 
 document.addEventListener('DOMContentLoaded', function () {
-  accordionsList.forEach(function (item) {
-    
+  accordionsList.forEach(function (item, index) {
+    const activeText = item.querySelector('.aboutus-accord-dropdown');
     const btnDown = item.querySelector('.aboutus-accord-btn-down');
     const btnUp = item.querySelector('.aboutus-accord-btn-up');
-
+    if (index === 0) {
+      activeText.classList.toggle('hidden');
+      activeText.classList.add('active'); 
+      
+      btnDown.classList.add('hidden'); 
+      btnUp.classList.remove('hidden');
+ 
+    }
     
     btnDown.addEventListener('click', function () {
       activity(item);
@@ -27,15 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnDown = item.querySelector('.aboutus-accord-btn-down');
     const btnUp = item.querySelector('.aboutus-accord-btn-up');
     
-    //activeText.classList.toggle('active'); 
+    activeText.classList.toggle('active'); 
     activeText.classList.toggle('hidden');
     btnUp.classList.toggle('hidden');
     btnDown.classList.toggle('hidden');
-    //if (activeText.classList.contains('active')) {
-     // activeText.style.maxHeight = activeText.scrollHeight + 'px'; 
-    //} else {
-     // activeText.style.maxHeight = '0'; 
-    //}
+    if (activeText.classList.contains('active')) {
+
+      activeText.style.maxHeight = activeText.scrollHeight + 'px'; // Встановлення максимальної висоти
+    } else {
+      activeText.style.maxHeight = '0'; // Сховати панель акордеону
+    }
   }
 });
 
