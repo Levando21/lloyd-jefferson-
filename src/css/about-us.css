@@ -126,6 +126,24 @@
   top: 12px;
   right: 0;
 }
+
+
+/* ----------------------------------------------------------------- */
+.aboutus-accord-btn-down {
+  transition: transform 0.5s ease;
+}
+
+.is-active .aboutus-accord-btn-down {
+  transform: rotate(180deg);
+}
+
+.aboutus-accord-btn-close.is-active .aboutus-accord-btn-down {
+  transform: rotate(0deg);
+  transition: transform 5s ease;
+}
+
+/* ----------------------------------------------------------------- */
+
 .aboutus-accord-arrow-up,
 .aboutus-accord-arrow-down {
   stroke: #fafafa;
@@ -151,10 +169,11 @@
   transition: transform 0.5s;
 }
 
-.aboutus-accord-btn-up:hover,
-.aboutus-accord-btn-down:hover svg {
-  animation: rotateAnimation 2s infinite;
-}
+/*.aboutus-accord-btn-up:hover,*/
+/*.aboutus-accord-btn-down:hover svg {*/
+/*  animation: rotateAnimation 2s infinite;*/
+/*}*/
+
 .aboutus-accord-dropdown {
   display: flex;
   flex-direction: column;
