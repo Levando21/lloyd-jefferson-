@@ -44,7 +44,6 @@ const appearReviews = async () => {
 
     nextButton.addEventListener('click', () => {
       switchComments(1);
-      console.log('Helo');
     });
 
     // Fetch reviews
