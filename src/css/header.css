@@ -1,6 +1,6 @@
 .header {
     position: absolute;
-    width: 375px;
+    /*width: 375px;*/
     display: flex;
     justify-content: space-between;
     left: 0;

@@ -1,4 +1,4 @@
-import { postRequests } from './api.js';
+import {postRequestsApi} from './api.js';
 
 const REGEX = /^\w+(.\w+)?@[a-zA-Z_]+?.[a-zA-Z]{2,3}$/;
 
@@ -70,7 +70,7 @@ const handleSubmit = async (e) => {
 
   // send data
   try {
-    const result = await postRequests(data);
+    const result = await postRequestsApi(data);
     formEl.reset();
     handleOpenModal(result);
   } catch (error) {
