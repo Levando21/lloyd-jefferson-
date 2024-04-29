@@ -1,37 +1,39 @@
-const modalHeader = document.querySelector('.modal-header');
-const modalBtnClose = document.querySelector('.modal-btn-close');
-const btnMenu = document.querySelector('.header-icon-burger');
-const menuLinks = document.querySelectorAll('.menu-list a');
+document.addEventListener('DOMContentLoaded', function () {
+  const modalHeader = document.querySelector('.modal-header');
+  const modalBtnClose = document.querySelector('.modal-btn-close');
+  const btnMenu = document.querySelector('.header-icon-burger');
+  const menuLinks = document.querySelectorAll('.menu-list a');
+  const btnMenuTablet = document.querySelector('.btn-menu-tablet');
+  const btnMenuModal = document.querySelector('.btn-menu');
 
+  function openModal() {
+    modalHeader.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
 
-function openModal() {
-    modalHeader.classList.add('is-open'); 
-    document.body.style.overflow = 'hidden'; 
-}
-
-function closeModal() {
+  function closeModal() {
     modalHeader.classList.remove('is-open');
     document.body.style.overflow = '';
-}
-modalBtnClose.addEventListener('click', closeModal); 
-btnMenu.addEventListener('click', openModal); 
+  }
 
+  modalBtnClose.addEventListener('click', closeModal);
+  btnMenu.addEventListener('click', openModal);
+  btnMenuTablet.addEventListener('click', closeModal);
 
-document.addEventListener('DOMContentLoaded', function() {
-    menuLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            closeModal();
-        });
+  menuLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      closeModal();
     });
+  });
+
+  btnMenuModal.addEventListener('click', function () {
+    closeModal();
+  });
+
+  const menuCenterOpen = document.querySelector('.menu-center-open');
+  const menuCenterList = document.querySelector('.menu-center-list');
+
+  menuCenterOpen.addEventListener('click', function () {
+    menuCenterList.classList.toggle('is-open');
+  });
 });
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const menuCenterOpen = document.querySelector('.menu-center-open');
-    const menuCenterList = document.querySelector('.menu-center-list');
-
-    menuCenterOpen.addEventListener('click', function() {
-        menuCenterList.classList.toggle('is-open');
-    });
-});
-
