@@ -1,6 +1,5 @@
 .about-us {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 32px 0;
 }
 
 .aboutus-container-story-descr {
@@ -146,11 +145,9 @@
 
   max-height: 650px;
 
- 
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
 }
-
 
 .aboutus-dscr-accordion {
   letter-spacing: -0.02em;
@@ -189,7 +186,8 @@ li.swiper-slide {
 }
 @media screen and (min-width: 375px) {
   .aboutus-skills-item {
-  font-size: 20px;}
+    font-size: 20px;
+  }
 }
 
 .aboutus-skills-btn {
@@ -197,9 +195,7 @@ li.swiper-slide {
   cursor: pointer;
   border: none;
   margin-left: 55px;
-
 }
-
 
 @keyframes wiggle-right {
   0% {
@@ -224,11 +220,8 @@ li.swiper-slide {
 }
 
 .aboutus-skills-btn-icon {
-  fill: #3B3B3B;
+  fill: #3b3b3b;
   animation: wiggle-right 1s infinite;
-  
-  
-    
 }
 .aboutus-container-skills {
   display: flex;
@@ -237,7 +230,7 @@ li.swiper-slide {
 
 @media screen and (min-width: 768px) {
   .about-us {
-    padding-bottom: 48px;
+    padding: 32px 0 48px 0;
   }
   .aboutus-container-story-descr {
     padding: 64px;
@@ -271,18 +264,16 @@ li.swiper-slide {
   .aboutus-skills-btn {
     margin-left: 64px;
   }
-    .aboutus-skills-btn-icon {
-      width:40px;
-       height:40px;
-    }
-    
+  .aboutus-skills-btn-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 /*---------------------------- Adaptive desktop (1440px)----------------------------*/
 
 @media screen and (min-width: 1440px) {
   .about-us {
-    padding-top: 54px;
-    padding-bottom: 76px;
+    padding: 48px 0 82px 0;
   }
   .aboutus-wrap-story {
     display: flex;
@@ -317,7 +308,7 @@ li.swiper-slide {
   .aboutus-skills-btn {
     margin-left: 72px;
   }
-    .aboutus-skills-btn-icon {
-      animation: none;
-    }
+  .aboutus-skills-btn-icon {
+    animation: none;
+  }
 }
