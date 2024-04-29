@@ -2,6 +2,22 @@
   padding: 32px 0;
 }
 
+.aboutus-photo-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  box-shadow: 0 0 8px #ccc5bf;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.aboutus-photo-box:hover::before {
+  opacity: 1;
+}
+
 .aboutus-container-story-descr {
   border-radius: 24px;
 
@@ -20,7 +36,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 20px;
+  border-radius: 24px;
   box-shadow: 0 0 8px #ed3b44;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -59,6 +75,7 @@
   height: auto;
   object-fit: contain;
   width: 100%;
+  position: relative;
 }
 
 @media (min-resolution: 192dpi) {
@@ -307,8 +324,5 @@ li.swiper-slide {
   }
   .aboutus-skills-btn {
     margin-left: 72px;
-  }
-  .aboutus-skills-btn-icon {
-    animation: none;
   }
 }
