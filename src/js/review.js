@@ -1,82 +1,86 @@
 import Swiper from 'swiper';
-import { getReviews } from './api';
+import { Navigation, Keyboard } from 'swiper/modules';
+import { getPortfolioReviews } from './api.js';
+const reviewsList = document.querySelector('.reviews-list');
 
-// Функція для створення HTML розмітки для кожного відгуку
-function reviewMarkup(reviews) {
-  return reviews
-    .map(
-      review =>
-        `<li class="swiper-slide review-item">
-        <img
-          class="review-avatar"
-          src="${review.avatar_url}"
-          alt="${review.author}'s avatar"
-        />
-        <h3 class="review-author">${review.author}</h3>
-        <p
-          class="review-text"
-          style="
-           padding-right: 0px;
-           width: 284px;
-           height: 158px;
-          "
-        >
-          It's not the will to win that matters—everyone has that. It's the will
-          to prepare to win that matters.
-        </p>
+getPortfolioReviews()
+  .then(response => {
+    if (!response.statusText === 'OK') {
+      throw new Error('Empty response data');
+    }
+
+    renderReviews(response.data, reviewsList, true);
+  })
+  .catch(() => {
+    showMessage('Server error. Please try again!');
+    renderReviews([], reviewsList, false);
+  });
+
+function renderReviews(reviews, reviewList, ok) {
+  if (ok) {
+    const reviewHTML = reviews
+      .map(
+        ({ _id, author, avatar_url, review }) =>
+          `<li class="reviews-list-item swiper-slide" id="review-${_id}" aria-label="review">
+          <picture>
+            <source srcset="${avatar_url}" 
+              type="image/jpeg">
+              <img 
+                class="review-photo" 
+                src="${avatar_url}" 
+                alt="${author} photo" 
+                width="48" 
+                height="48" 
+                loading="lazy"
+              />
+          </picture>
+          <h3 class="review-author" aria-label="reviews author name">${author}</h3>
+          <div class="review-text-container">
+            <p class="review-text" aria-label="review text">${review}</p>
+          </div>
+          
       </li>`
-    )
-    .join('');
+      )
+      .join('');
+
+    reviewList.insertAdjacentHTML('beforeend', reviewHTML);
+  } 
 }
-// Функція для відображення відгуків
-const appearReviews = async () => {
-  try {
-    const reviewList = document.querySelector('.review-list');
-    const prevButton = document.querySelector('.swiper-button-prev');
-    const nextButton = document.querySelector('.swiper-button-next');
 
-    const res = await getReviews();
-    if (!res || res.length === 0) {
-      throw new Error('Reviews not found');
-    }
 
-    const reviewsHTML = reviewMarkup(res);
-    reviewList.innerHTML =
-      '<ul class="swiper-wrapper">' + reviewsHTML + '</ul>';
 
-    const screenWidth = window.innerWidth;
-    let slidesPerView = 1;
+const reviewsSwiper = new Swiper('.reviews-swiper', {
+  modules: [Navigation, Keyboard],
+  speed: 800,
+  grabCursor: true,
+  allowTouchMove: true,
+  direction: 'horizontal',
+  watchOverflow: true,
+  spaceBetween: 16,
 
-    if (screenWidth >= 1440) {
-      slidesPerView = 4;
-    } else if (screenWidth >= 758) {
-      slidesPerView = 2;
-    }
+  navigation: {
+    nextEl: '.next-review-btn',
+    prevEl: '.prev-review-btn',
+  },
 
-    const swiper = new Swiper('.review-list', {
-      speed: 400,
-      spaceBetween: 0,
-      loop: true,
-      setWrapperSize: true,
-      slidesPerView: slidesPerView,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-    // Додавання функціональності до кнопок "Prev" та "Next" з використанням методів Swiper
-    prevButton.addEventListener('click', () => {
-      swiper.slidePrev();
-    });
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+    pageUpDown: true,
+  },
 
-    nextButton.addEventListener('click', () => {
-      swiper.slideNext();
-    });
-  } catch (error) {
-    console.error('Error fetching or displaying reviews:', error);
-    alert('Error fetching reviews. Please try again later.');
-    reviewList.innerHTML = '<p class="not-found">Not found</p>';
-  }
-};
-
-appearReviews();
+  breakpoints: {
+    320: {
+      slidesPerGroup: 1,
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerGroup: 2,
+      slidesPerView: 2,
+    },
+    1440: {
+      slidesPerGroup: 4,
+      slidesPerView: 4,
+    },
+  },
+});

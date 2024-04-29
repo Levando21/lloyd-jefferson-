@@ -1,22 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
 
-const baseURL = 'https://portfolio-js.b.goit.study/api';
-const reviews = '/reviews';
-const requests = '/requests';
+axios.defaults.baseURL = 'https://portfolio-js.b.goit.study/api'
+axios.defaults.headers.common['Accept'] = 'application/json';
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 
-const apiServices = axios.create({ baseURL });
+// до функції підчеплюємо then/catch
+export function getPortfolioReviews() {
+    return axios.get('/reviews');
+}
 
-const getReviews = async () => {
-  const response = await apiServices.get(reviews);
-  return response.data;
-};
-
-const postRequests = async (data) => {
-  const response = await apiServices.post(requests, data);
-  return response.data;
-};
-
-export {
-  getReviews,
-  postRequests,
-};
+// до функції підчеплюємо then/catch
+export function postRequests(obj) {
+  return axios.post('/requests', obj);
+}
