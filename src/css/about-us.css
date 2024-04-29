@@ -67,6 +67,8 @@
     background-image: url('../img/about-us/about-us-ceo-mobile-retina.png');
   }
 }
+/*---------------------------------- Accordion --------------------------------*/
+
 .aboutus-accordion {
   display: flex;
   flex-direction: column;
@@ -129,19 +131,26 @@
 }
 
 .aboutus-accord-btn-up,
-.aboutus-accord-btn-down #svg {
+.aboutus-accord-btn-down svg {
   transition: transform 0.5s;
 }
 
 .aboutus-accord-btn-up:hover,
-.aboutus-accord-btn-down:hover #svg {
+.aboutus-accord-btn-down:hover svg {
   animation: rotateAnimation 2s infinite;
 }
 .aboutus-accord-dropdown {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  max-height: 100%;
+
+ 
+    /*overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);*/
 }
+
+
 .aboutus-dscr-accordion {
   letter-spacing: -0.02em;
 }
@@ -153,6 +162,7 @@
 .aboutus-dscr-accordion-item {
   letter-spacing: -0.02em;
 }
+
 /*---------------------------------- Swiper --------------------------------*/
 
 .aboutus-skills-circle {
@@ -169,7 +179,7 @@
 .about-us-wrapper-item {
   display: flex;
 }
-#swiper-slide {
+li.swiper-slide {
   display: flex;
 }
 .aboutus-skills-item {
@@ -182,12 +192,39 @@
   cursor: pointer;
   border: none;
   margin-left: 55px;
+
+}
+
+
+@keyframes wiggle-right {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .aboutus-skills-btn-icon {
-  fill: #fafafa;
+  fill: #3B3B3B;
+  animation: wiggle-right 1s infinite;
+  
+  
+    
 }
-
 .aboutus-container-skills {
   display: flex;
 }
@@ -229,6 +266,11 @@
   .aboutus-skills-btn {
     margin-left: 64px;
   }
+    .aboutus-skills-btn-icon {
+      width:40px;
+       height:40px;
+    }
+    
 }
 /*---------------------------- Adaptive desktop (1440px)----------------------------*/
 
@@ -270,4 +312,7 @@
   .aboutus-skills-btn {
     margin-left: 72px;
   }
+    .aboutus-skills-btn-icon {
+      animation: none;
+    }
 }
