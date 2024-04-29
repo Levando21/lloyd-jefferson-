@@ -1,27 +1,21 @@
 .faq {
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 32px 0;
 }
 
 @media only screen and (min-width: 768px) {
   .faq {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 48px 0;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .faq {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 82px 0;
   }
 }
 
 .faq-header-main {
-  font-weight: 600; 
+  font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: rgba(250, 250, 250, 0.4);
@@ -137,8 +131,6 @@
   color: #fafafa;
 }
 
-
-
 @keyframes rotateAnimation {
   0% {
     transform: rotate(0deg);
@@ -152,7 +144,6 @@
 .faq-btn-up,
 .faq-btn-down svg {
   transition: transform 0.5s;
-
 }
 
 .faq-btn-up:hover,
@@ -160,20 +151,17 @@
   animation: rotateAnimation 2s infinite;
 }
 
-
 .faq-btn-up:focus,
 .faq-btn-down:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
-
 .faq-list.active .faq-panel {
   display: block;
 }
 
-
- .faq-panel {
+.faq-panel {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
@@ -182,8 +170,8 @@
 
 .faq-panel.active {
   opacity: 1;
-  max-height: 1000px; 
-} 
+  max-height: 1000px;
+}
 
 .faq-text {
   font-weight: 500;
@@ -195,7 +183,6 @@
 .hidden {
   display: none;
 }
-
 
 @keyframes slideIn {
   0% {
@@ -226,4 +213,3 @@
 .slide-out {
   animation: slideOut 0.5s forwards;
 }
-
