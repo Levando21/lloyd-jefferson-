@@ -1,91 +1,82 @@
 import Swiper from 'swiper';
 import { getReviews } from './api';
 
-// Function to create HTML markup for each review
+// Функція для створення HTML розмітки для кожного відгуку
 function reviewMarkup(reviews) {
   return reviews
     .map(
       review =>
-        `<li class="review-item">
-      <img class="review-avatar" src="${review.avatar_url}" alt="${review.author}'s avatar"/>
-      <h3 class="review-author">${review.author}</h3>
-      <p class="review-text">${review.review}</p>
-    </li>`
+        `<li class="swiper-slide review-item">
+        <img
+          class="review-avatar"
+          src="${review.avatar_url}"
+          alt="${review.author}'s avatar"
+        />
+        <h3 class="review-author">${review.author}</h3>
+        <p
+          class="review-text"
+          style="
+           padding-right: 0px;
+           width: 284px;
+           height: 158px;
+          "
+        >
+          It's not the will to win that matters—everyone has that. It's the will
+          to prepare to win that matters.
+        </p>
+      </li>`
     )
     .join('');
 }
-
-// Function to display reviews
+// Функція для відображення відгуків
 const appearReviews = async () => {
   try {
     const reviewList = document.querySelector('.review-list');
     const prevButton = document.querySelector('.swiper-button-prev');
     const nextButton = document.querySelector('.swiper-button-next');
 
-    let currentIndex = 0; // Current review index
-
-    // Function to switch between reviews
-    function switchComments(direction) {
-      currentIndex += direction;
-
-      if (currentIndex < 0) {
-        currentIndex = 0;
-      } else if (currentIndex >= reviewList.children.length) {
-        currentIndex = reviewList.children.length - 1;
-      }
-
-      const offset = -currentIndex * reviewList.children[0].offsetWidth;
-      reviewList.style.transform = `translateX(${offset}px)`; // Corrected syntax
+    const res = await getReviews();
+    if (!res || res.length === 0) {
+      throw new Error('Reviews not found');
     }
 
-    prevButton.addEventListener('click', () => {
-      switchComments(-1);
-    });
-
-    nextButton.addEventListener('click', () => {
-      switchComments(1);
-    });
-
-    // Fetch reviews
-    const res = await getReviews();
     const reviewsHTML = reviewMarkup(res);
-    reviewList.insertAdjacentHTML('beforeend', reviewsHTML);
+    reviewList.innerHTML =
+      '<ul class="swiper-wrapper">' + reviewsHTML + '</ul>';
 
-    // Calculate slidesPerView based on screen width
     const screenWidth = window.innerWidth;
-    let slidesPerView = 6;
+    let slidesPerView = 1;
 
     if (screenWidth >= 1440) {
       slidesPerView = 4;
-    } else if (screenWidth >= 786) {
+    } else if (screenWidth >= 758) {
       slidesPerView = 2;
-    } else {
-      slidesPerView = 1;
     }
 
-    // Initialize Swiper
-    const swiper = new Swiper('.review-list-swiper', {
+    const swiper = new Swiper('.review-list', {
       speed: 400,
       spaceBetween: 0,
       loop: true,
       setWrapperSize: true,
       slidesPerView: slidesPerView,
-      breakpoints: {
-        1440: { slidesPerView: 4 },
-        769: { slidesPerView: 2 },
-        375: { slidesPerView: 1 },
-        320: { slidesPerView: 1 },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
     });
+    // Додавання функціональності до кнопок "Prev" та "Next" з використанням методів Swiper
+    prevButton.addEventListener('click', () => {
+      swiper.slidePrev();
+    });
 
-    // Update currentIndex on slide change
-    swiper.on('slideChange', () => {
-      currentIndex = swiper.realIndex;
+    nextButton.addEventListener('click', () => {
+      swiper.slideNext();
     });
   } catch (error) {
-    console.error('Error fetching reviews:', error);
+    console.error('Error fetching or displaying reviews:', error);
+    alert('Error fetching reviews. Please try again later.');
+    reviewList.innerHTML = '<p class="not-found">Not found</p>';
   }
 };
 
-// Call appearReviews to display reviews
 appearReviews();

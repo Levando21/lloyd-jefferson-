@@ -1,10 +1,8 @@
-/* Стилі для секції з відгуками */
 .reviews-section {
   display: flex;
-  color: #fafafa66; /* Колір тексту */
+  color: #fafafa66;
 }
 
-/* Стилі для заголовка "REVIEW" */
 .reviews-title {
   font-weight: 600;
   line-height: 1.5;
@@ -13,89 +11,77 @@
   color: rgba(250, 250, 250, 0.4);
 }
 
-/* Додайте медіа-запит для встановлення відступів для заголовка "REVIEW" */
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 758px) {
   .reviews-title {
-    margin-left: 32px; /* Відступ зліва при ширині до 1440px */
+    margin-left: 32px;
   }
 }
 
 @media screen and (max-width: 375px) {
   .reviews-title {
-    margin-left: 16px; /* Відступ зліва при ширині до 375px */
+    margin-left: 16px;
   }
 }
 
 .review-avatar {
   width: 48px;
   height: 48px;
-  border-radius: 10px; /* Радіус скруглення */
-  margin-top: 32px; /* Піднято фото відгуку вище */
-  margin-bottom: 32px; /* Піднято фото відгуку вище */
+  border-radius: 10px;
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
-/* Стилі для списку відгуків */
 .review-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Вирівнювання елементів по центру */
-  padding: 0; /* Відстань всередині списку */
-  list-style-type: none; /* Видалення маркерів списку */
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
   gap: 16px;
 }
 
-/* Стилі для окремого елементу відгуку */
 .review-item {
   border: 1px solid grey;
-  width: 332px; /* Фіксована ширина елементу відгуку */
-  height: auto; /* Висота, щоб пристосовуватися до змісту */
-  padding: 32px 24px; /* Відстань всередині елементу */
-  border-radius: 20px; /* Скруглення кутів */
-  margin-top: 32px; /* Відстань між елементами */
+  width: 332px;
+  height: 302px;
+  padding: 16px;
+  border-radius: 20px;
+  margin-top: 32px;
+  box-sizing: border-box;
+  margin-right: 16px;
+  overflow: hidden;
 }
 
-/* Стилі для тексту відгуку */
+@media screen and (max-width: 1440px) {
+  .review-item {
+    width: 344px;
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .review-item {
+    width: 332px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .review-item {
+    width: 344px;
+  }
+}
+
 .review-text {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: rgba(250, 250, 250, 0.4); /* Колір тексту */
-  margin-top: 16px; /* Відстань між ім'ям та текстом */
+  color: rgba(250, 250, 250, 0.4);
+  margin-top: 16px;
+  width: 284px;
+  height: 158px;
+  overflow: hidden;
 }
 
 .review-author {
   color: #fafafa;
-}
-
-/* Стилі для кнопок "Попередній" і "Наступний" */
-.projects-btn-box {
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-}
-
-/* Стилі для елемента .list-start */
-.list-start {
-  max-width: 1248px; /* Максимальна ширина для .list-start */
-  margin: 0 auto; /* Центрування .list-start */
-}
-
-/* Додайте медіа-запит для встановлення кількості коментарів в залежності від ширини екрану */
-@media screen and (max-width: 1440px) {
-  .review-item {
-    width: calc(25% - 16px); /* 4 коментарі при ширині до 1440px */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .review-item {
-    width: calc(50% - 16px); /* 2 коментарі при ширині до 768px */
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .review-item {
-    width: calc(100% - 16px); /* 1 коментар при ширині до 375px */
-  }
 }
