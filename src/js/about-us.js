@@ -1,7 +1,19 @@
-
+import Accordion from 'accordion-js';
 
 import Swiper from 'swiper';
 import '../../node_modules/swiper/swiper.css';
+
+
+  new Accordion(".accordion-container-first", {
+  duration: 600,
+    showMultiple: true,
+    openOnInit: [0],
+  
+ });
+
+
+
+
 
 const accordionsList = document.querySelectorAll('.aboutus-accordion-item');
 accordionsList.forEach(function (item) {
