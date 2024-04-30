@@ -93,7 +93,7 @@
 
 .aboutus-accordion-item {
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
-  position: relative;
+ 
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -106,9 +106,10 @@
   color: rgba(250, 250, 250, 0.4);
 
   padding-bottom: 24px;
+  position: relative;
 }
 
-.aboutus-accord-btn-up,
+
 .aboutus-accord-btn-down {
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 100px;
@@ -123,49 +124,47 @@
   align-items: center;
 
   position: absolute;
-  top: 12px;
+  top: 0;
   right: 0;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
-.aboutus-accord-arrow-up,
+
 .aboutus-accord-arrow-down {
   stroke: #fafafa;
   fill: #fafafa;
 }
-.aboutus-accord-btn-up:hover,
-.aboutus-accord-btn-down:hover {
+
+.aboutus-accord-btn-down:hover, .aboutus-accord-btn-down:focus{
   background-color: rgba(250, 250, 250, 0.1);
   border-color: rgba(250, 250, 250, 0.5);
-}
-@keyframes rotateAnimation {
-  0% {
-    transform: rotate(0deg);
-  }
+  border-color: rgba(250, 250, 250, 0.5);
 
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
-.aboutus-accord-btn-up,
-.aboutus-accord-btn-down svg {
-  transition: transform 0.5s;
+}
+.aboutus-accord-btn-down {
+  transition: transform 0.5s ease;
+}
+.is-active .aboutus-accord-btn-down {
+  transform: rotate(180deg);
 }
 
-.aboutus-accord-btn-up:hover,
-.aboutus-accord-btn-down:hover svg {
-  animation: rotateAnimation 2s infinite;
+
+.aboutus-accord-btn-up:focus,
+.aboutus-accord-btn-down:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
+
 .aboutus-accord-dropdown {
   display: flex;
   flex-direction: column;
   gap: 32px;
 
-  max-height: 650px;
-
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  
 }
-
+.aboutus-accordion-item.is-active .aboutus-accord-dropdown {
+  display: block;
+}
 .aboutus-dscr-accordion {
   letter-spacing: -0.02em;
 }
@@ -182,6 +181,7 @@
   text-shadow: 0 0 5px #ed3b44;
   transition: text-shadow 0.5s ease;
 }
+
 
 /*---------------------------------- Swiper --------------------------------*/
 
@@ -279,10 +279,7 @@ li.swiper-slide {
   .aboutus-accord-dropdown {
     gap: 16px;
   }
-  .aboutus-accord-btn-up,
-  .aboutus-accord-btn-down {
-    top: 8px;
-  }
+  
   .aboutus-skills-btn {
     margin-left: 64px;
   }

@@ -1,64 +1,25 @@
-import Accordion from 'accordion-js';
-// import 'accordion-js/dist/accordion.min.css';
+
 
 import Swiper from 'swiper';
 import '../../node_modules/swiper/swiper.css';
 
-// Accordion //
 const accordionsList = document.querySelectorAll('.aboutus-accordion-item');
-
-document.addEventListener('DOMContentLoaded', function () {
-  accordionsList.forEach(function (item, index) {
-    const activeText = item.querySelector('.aboutus-accord-dropdown');
-    const btnDown = item.querySelector('.aboutus-accord-btn-down');
-    const btnUp = item.querySelector('.aboutus-accord-btn-up');
-    if (index === 0) {
-      activeText.classList.toggle('hidden');
-      activeText.classList.add('active');
-
-      btnDown.classList.add('hidden');
-      btnUp.classList.remove('hidden');
-    }
-    btnUp.addEventListener('mouseenter', function () {
-      titleAccordion.classList.add('hovered');
+accordionsList.forEach(function (item) {
+  const title = item.querySelector('.aboutus-title-accordion');
+  const btnDown = item.querySelector('.aboutus-accord-btn-down');
+  btnDown.addEventListener('mouseenter', function () {
+      title.classList.add('hovered');
     });
 
-    btnUp.addEventListener('mouseleave', function () {
-      titleAccordion.classList.remove('hovered');
+btnDown.addEventListener('mouseleave', function () {
+      title.classList.remove('hovered');
     });
-
-    btnDown.addEventListener('mouseenter', function () {
-      titleAccordion.classList.add('hovered');
-    });
-
-    btnDown.addEventListener('mouseleave', function () {
-      titleAccordion.classList.remove('hovered');
-    });
-
-    btnDown.addEventListener('click', function () {
-      activity(item);
-    });
-    btnUp.addEventListener('click', function () {
-      activity(item);
-    });
-  });
-
-  function activity(item) {
-    const activeText = item.querySelector('.aboutus-accord-dropdown');
-    const btnDown = item.querySelector('.aboutus-accord-btn-down');
-    const btnUp = item.querySelector('.aboutus-accord-btn-up');
-
-    activeText.classList.toggle('active');
-    activeText.classList.toggle('hidden');
-    btnUp.classList.toggle('hidden');
-    btnDown.classList.toggle('hidden');
-    if (activeText.classList.contains('active')) {
-      activeText.style.maxHeight = activeText.scrollHeight + 'px'; // Встановлення максимальної висоти
-    } else {
-      activeText.style.maxHeight = '0'; // Сховати панель акордеону
-    }
-  }
+    
 });
+ 
+
+
+
 
 // Swiper //
 
