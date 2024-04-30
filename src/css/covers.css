@@ -1,6 +1,6 @@
 .covers {
-  max-width: 320px;
   margin: 0 auto;
+  max-width: 100%;
   min-height: 508px;
   overflow: hidden;
   background-image: url(/img/covers/background-mobile-1x.png);
@@ -20,7 +20,7 @@
 .covers-marquee {
   position: absolute;
   right: -2000px;
-  left: -32px;
+  left: -320px;
   overflow: hidden;
 }
 
@@ -65,7 +65,7 @@
 
 @media screen and (min-width: 768px) {
   .covers {
-    max-width: 768px;
+    max-width: 100%;
     min-height: 906px;
     background-image: url(/img/covers/background-tablet-1x.png);
   }
@@ -83,7 +83,7 @@
 
 @media screen and (min-width: 1440px) {
   .covers {
-    max-width: 1440px;
+    max-width: 100%;
     background-image: url(/img/covers/background-dekstop-1x.png);
   }
   .covers-inner {
