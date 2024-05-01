@@ -230,3 +230,9 @@
     padding: 82px 0;
   }
 }
+
+@media (min-width: 1440px) {
+  .projects-btn-box {
+    gap: 20px;
+  }
+}
