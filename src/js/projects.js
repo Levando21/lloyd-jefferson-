@@ -50,7 +50,7 @@ const projectsImg = `
           Innovations
         </p>
         <a
-          href="https://levando21.github.io/lloyd-jefferson-/"
+          href="https://github.com/Levando21/lloyd-jefferson-"
           target="_blank"
         >
           <button class="projects-description-btn">See projects</button>
@@ -104,7 +104,7 @@ const projectsImg = `
           Innovations
         </p>
         <a
-          href="https://levando21.github.io/lloyd-jefferson-/"
+          href="https://github.com/Levando21/lloyd-jefferson-"
           target="_blank"
         >
           <button class="projects-description-btn">See projects</button>
