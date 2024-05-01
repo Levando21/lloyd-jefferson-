@@ -125,10 +125,3 @@
   fill: rgba(59, 59, 59, 1);
   /* Цвет иконки для неактивных кнопок */
 }
-
-.next-icon-btn,
-.prev-icon-btn {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
