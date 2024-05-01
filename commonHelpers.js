@@ -39,7 +39,7 @@ import{A as _,S as f,a as B,N as P,K as N,i as O}from"./assets/vendor-fc10b007.j
           Innovations
         </p>
         <a
-          href="https://levando21.github.io/lloyd-jefferson-/"
+          href="https://github.com/Levando21/lloyd-jefferson-"
           target="_blank"
         >
           <button class="projects-description-btn">See projects</button>
