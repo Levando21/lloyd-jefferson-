@@ -4,15 +4,12 @@ import Swiper from 'swiper';
 import '../../node_modules/swiper/swiper.css';
 
 
-  new Accordion(".accordion-container-first", {
+new Accordion(".accordion-container-first", {
   duration: 600,
-    showMultiple: true,
-    openOnInit: [0],
-  
- });
+  showMultiple: true,
+  openOnInit: [0],
 
-
-
+});
 
 
 const accordionsList = document.querySelectorAll('.aboutus-accordion-item');
@@ -20,17 +17,14 @@ accordionsList.forEach(function (item) {
   const title = item.querySelector('.aboutus-title-accordion');
   const btnDown = item.querySelector('.aboutus-accord-btn-down');
   btnDown.addEventListener('mouseenter', function () {
-      title.classList.add('hovered');
-    });
+    title.classList.add('hovered');
+  });
 
-btnDown.addEventListener('mouseleave', function () {
-      title.classList.remove('hovered');
-    });
-    
+  btnDown.addEventListener('mouseleave', function () {
+    title.classList.remove('hovered');
+  });
+
 });
- 
-
-
 
 
 // Swiper //

@@ -4,25 +4,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 import {postRequestsApi} from './api.js';
 
-const REGEX = /^\w+(.\w+)?@[a-zA-Z_]+?.[a-zA-Z]{2,3}$/;
-
-// const validateEmail = (regex, email) => {
-//   return regex.test(email);
-// };
-
-console.log(REGEX.test('user11@mail'))
-
-const testData = {
-  email: 'user11@mail',
-  comment: 'some text'
-}
-
-const testApi = async (data) => {
-  return await postRequestsApi(data)
-}
-
-testApi(testData)
-
 iziToast.settings({
   position: 'bottomRight',
 })
