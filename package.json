@@ -27,6 +27,7 @@
     "pixabay": "^0.0.1",
     "simplelightbox": "^2.14.3",
     "swiper": "^11.1.1",
+    "validator": "^13.11.0",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
   }
