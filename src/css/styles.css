@@ -53,9 +53,10 @@ body {
 }
 
 @media screen and (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
 }
+
 /*---------------------------- Adaptive tablet ----------------------------*/
 @media screen and (min-width: 768px) {
   .container {
@@ -91,4 +92,3 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-
