@@ -15,7 +15,7 @@ new Accordion(".accordion-container-first", {
 const accordionsList = document.querySelectorAll('.aboutus-accordion-item');
 accordionsList.forEach(function (item) {
   const title = item.querySelector('.aboutus-title-accordion');
-  const btnDown = item.querySelector('.aboutus-accord-btn-down');
+  const btnDown = item.querySelector('.ac-trigger');
   btnDown.addEventListener('mouseenter', function () {
     title.classList.add('hovered');
   });
