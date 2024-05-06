@@ -1,0 +1,23 @@
+.scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+
+  z-index: 9999999;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+
+  color: inherit;
+  background-color: rgba(237, 59, 68, 50%);
+}
+
+.scroll-btn:hover {
+  background-color: rgba(224, 55, 63, 50%);
+}

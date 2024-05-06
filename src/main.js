@@ -1,4 +1,5 @@
-import './js/loading.js'
+import './js/loading.js';
+import './js/scroll-to-top-btn.js';
 import './js/header.js';
 import './js/hero.js';
 import './js/about-us.js';
