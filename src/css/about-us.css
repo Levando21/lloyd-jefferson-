@@ -74,7 +74,7 @@
   border-radius: 24px;
   max-width: 100%;
   min-height: 500px;
-  background-image: url('../img/about-us/about-us-ceo-mobile.png');
+  background-image: url('../img/about-us/about_us_mob@1x.png');
   background-size: cover;
   margin-bottom: 12px;
   height: auto;
@@ -85,7 +85,7 @@
 
 @media (min-resolution: 192dpi) {
   .aboutus-photo-box {
-    background-image: url('../img/about-us/about-us-ceo-mobile-retina.png');
+    background-image: url('../img/about-us/about_us_mob@2x.png');
   }
 }
 
@@ -269,12 +269,12 @@ li.swiper-slide {
   .aboutus-photo-box {
     min-width: 700px;
     min-height: 700px;
-    background-image: url('../img/about-us/about-us-ceo-tablet.png');
+    background-image: url('../img/about-us/about_us_tabl@1x.png');
   }
 
   @media (min-resolution: 192dpi) {
     .aboutus-photo-box {
-      background-image: url('../img/about-us/about-us-ceo-tablet-ritina.png');
+      background-image: url('../img/about-us/about_us_tabl@2x.png');
     }
   }
   .aboutus-accordion {
@@ -315,7 +315,13 @@ li.swiper-slide {
   .aboutus-photo-box {
     min-width: 50%;
     min-height: 700px;
-    background-image: url('../img/about-us/about-us-ceo-dekstop.png');
+    background-image: url('../img/about-us/about_us_desk@1x.png');
+  }
+
+  @media (min-resolution: 192dpi) {
+    .aboutus-photo-box {
+      background-image: url('../img/about-us/about_us_desk@2x.png');
+    }
   }
 
   .aboutus-accord-dropdown {
